@@ -1,0 +1,28 @@
+.text-shadow {
+  text-shadow: 0 0 3px #000000;
+}
+
+.custom-box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.banner-wrapper {
+  background-image: url("../../assets/banner-back.png"), url("../../assets/banner-tree.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, 80%;
+  background-position: center, bottom -10px left;
+}
+
+.inner-box img {
+  height: 350px;
+}
+
+.road-tri {
+  margin-top: -6px;
+}
+
+.space-dress {
+  background: url("../../assets/space-dressing.png") center no-repeat;
+  background-size: cover;
+  min-height: 750px;
+}
