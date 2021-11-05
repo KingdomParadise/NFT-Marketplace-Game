@@ -36,6 +36,7 @@ import blueBoxLg from '../../assets/blue-box-lg.png';
 import yellowBoxLg from '../../assets/yellow-box-lg.png';
 import purpleBoxLg from '../../assets/purple-box-lg.png';
 import walletBlue from '../../assets/wallblue.gif';
+import textbox from '../../assets/textbox.png';
 import baseModel from '../../assets/base-model.gif';
 import roadBar from '../../assets/road-bar.png';
 import roadTri from '../../assets/road-tri.png';
@@ -134,6 +135,10 @@ export default function Home() {
         </Box>
 
         <Box title="Customise your Character with NFT Items" className="relative space-dress">
+          <div className="relative mt-8 mx-2 md:mx-8 h-16 md:h-auto">
+            <img src={textbox} className="mx-auto h-full" />
+            <p className="absolute transform -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2 text-sm sm:text-base md:text-2xl lg:text-3xl text-white">Customize your Character with NFT Items</p>
+          </div>
           <img className="absolute transform -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2" src={baseModel} />
         </Box>
 
