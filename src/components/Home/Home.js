@@ -1,7 +1,10 @@
 import './Home.css';
-import {FullCarousel, ItemCarousel} from './Carousel/Carousel';
+import {FullCarousel, ItemCarousel, RoadMapCarousel} from './Carousel/Carousel';
 import Box from './Box/Box';
 import ItemList from './ItemList/ItemList';
+import {SetupWalletModal, TokenomicsModal} from './Dialog/Dialog';
+import CopyClipBoard from './CopyClipBoard/CopyClipBoard';
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bannerLogo from '../../assets/banner-logo.png';
@@ -35,7 +38,6 @@ import walletBlue from '../../assets/wallblue.png';
 import baseModel from '../../assets/base-model.png';
 import roadBar from '../../assets/road-bar.png';
 import roadTri from '../../assets/road-tri.png';
-import clipCopy from '../../assets/clip-copy.png';
 
 export default function Home() {
     return (
@@ -66,16 +68,16 @@ export default function Home() {
           <ItemList title="NFT ACCESSORIES" backSrc={blueBox} innerSrc1={acs1} innerSrc2={acs2} innerSrc3={acs3} innerSrc4={acs4} />
         </Box>
 
-        <Box title="Extensive PVP System" sub="Different weapons, equipment and maps!" className="bg-pink-dark">
+        <Box title="Extensive PVP System" sub="Different weapons, equipment and maps!" className="bg-pink-dark pb-5">
           <div className="w-10/12 mx-auto mt-10">
             <div className="grid md:grid-cols-3 gap-5 md:gap-10">
               <div className="w-3/5 md:w-full mx-auto">
                 <div className="flex justify-center items-center relative">
                   <img src={blueBoxLg} className="w-full" />
                   <img src={iceGundle} className="absolute h-3/5 mb-10" />
-                  <p className="absolute bottom-8 md:bottom-6 lg:bottom-12 text-xl md:text-2xl text-white">Fun Weapons</p>
+                  <p className="absolute bottom-7 sm:bottom-12 md:bottom-6 lg:bottom-12 text-lg sm:text-xl md:text-2xl text-white">Fun Weapons</p>
                 </div>    
-                <p className="md:w-3/5 mx-auto mt-2 text-white text-opacity-50">Over 10 Weapons with different abilities</p>
+                <p className="md:w-4/5 mx-auto mt-2 text-white text-opacity-50 md:text-lg">Over 10 Weapons with different abilities</p>
               </div>
 
               <div className="w-3/5 md:w-full mx-auto">              
@@ -86,24 +88,24 @@ export default function Home() {
                     <img src={grenade} className="h-3/6 mb-6" />
                     <img src={emp} className="h-3/6 mb-6" />
                     </div>
-                  <p className="absolute bottom-8 md:bottom-6 lg:bottom-12 text-xl md:text-2xl text-white">Equipment</p>
+                  <p className="absolute bottom-7 sm:bottom-12 md:bottom-6 lg:bottom-12 text-lg sm:text-xl md:text-2xl text-white">Equipment</p>
                 </div>
-                <p className="md:w-3/5 mx-auto mt-2 text-white text-opacity-50">Different Equipment which helps in combat</p>              
+                <p className="md:w-4/5 mx-auto mt-2 text-white text-opacity-50 md:text-lg">Different Equipment which helps in combat</p>              
               </div>
 
               <div className="w-3/5 md:w-full mx-auto">
                 <div className="flex justify-center items-center relative">
                   <img src={purpleBoxLg} className="w-full" />
                   <img src={vaporcrate} className="absolute h-3/5 mb-10" />
-                  <p className="absolute bottom-8 md:bottom-6 lg:bottom-12 text-xl md:text-2xl text-white">Airdrops</p>
+                  <p className="absolute bottom-7 sm:bottom-12 md:bottom-6 lg:bottom-12 text-lg sm:text-xl md:text-2xl text-white">Airdrops</p>
                 </div>
-                <p className="md:w-3/5 mx-auto mt-2 text-white text-opacity-50">Airdrops come in with different rare weapons</p>
+                <p className="md:w-4/5 mx-auto mt-2 text-white text-opacity-50 md:text-lg">Airdrops come in with different rare weapons</p>
               </div>
             </div>
           </div>
-          <div>
+          {/* <div>
             <img className="h-10 w-full" src={pinkBlend} />
-          </div>
+          </div> */}
         </Box>
 
         <FullCarousel />
@@ -132,7 +134,7 @@ export default function Home() {
         </Box>
 
         <Box title="Customise your Character with NFT Items" className="space-dress">
-          <img className="h-72 mx-auto mt-40" src={baseModel} />
+          <img className="h-72 mx-auto mt-32 sm:mt-40" src={baseModel} />
         </Box>
 
         <Box title="Own and Customise an NFT Home" sub="Buy a property, customise it and earn daily VPR from it." className="px-4 bg-pink-dark">
@@ -142,41 +144,15 @@ export default function Home() {
         </Box>
 
         <Box title="Roadmap" sub="Our plans for the future" className="bg-purple-dark">
-          <img className="h-3 w-full mt-6 px-6" src={roadBar} />
-          <div className="grid grid-cols-3 gap-10 pb-3">
-            <div className="text-center text-white">
-              <img className="relative z-10 mx-auto w-6 road-tri" src={roadTri} />
-              <div className="w-10/12 mx-auto mt-2 bg-purple-deep rounded custom-box-shadow text-xl p-2 mb-3">DEC 2020</div>
-              <p>
-                Game Release <br/>
-                Marketing <br/>
-                Giveaways <br/>
-                Lootboxes
-              </p>
-            </div>
-
-            <div className="text-center text-white">
-              <img className="relative z-10 mx-auto w-6 road-tri" src={roadTri} />
-              <div className="w-10/12 mx-auto mt-2 bg-purple-deep rounded custom-box-shadow text-xl p-2 mb-3">Q1 2022</div>
-              <p>
-                PVE BETA <br/>
-                Team Blitz <br/>
-                Battle Pass <br/>
-                Rewards Pool
-              </p>
-            </div>
-
-            <div className="text-center text-white">
-              <img className="relative z-10 mx-auto w-6 road-tri" src={roadTri} />
-              <div className="w-10/12 mx-auto mt-2 bg-purple-deep rounded custom-box-shadow text-xl p-2 mb-3">Q2 2022</div>
-              <p>
-                SOL / ETH Wagers <br/>
-                Level Creator <br/>
-                Mini Games <br/>
-                Mobile Release
-              </p>
-            </div>
+          <img className="h-3 w-full mt-6 px-3 md:px-6" src={roadBar} />
+          <div className="grid grid-cols-3 gap-10">
+            {
+              [1,2,3].map((i) => (
+                <img key={i} className="relative z-10 mx-auto w-6 road-tri" src={roadTri} />
+              ))
+            }
           </div>
+          <RoadMapCarousel />
         </Box>
 
         <Box title="Vaporblitz Team" sub="The projects core team" className="bg-pink-dark">
@@ -184,14 +160,11 @@ export default function Home() {
         </Box>
 
         <Box title="Buy $VPR" sub="Buy the games main token on pancakeswap" className="text-center bg-purple-dark pb-8">
-          <a href="#" className="flex justify-center w-10/12 md:w-4/12 lg:w-3/12 mx-auto text-white custom-box-shadow rounded-md bg-pink-dark py-1 mt-4">Buy on Pancakeswap</a>
+          <a href="#" className="flex justify-center w-10/12 md:w-4/12 lg:w-3/12 mx-auto text-white custom-box-shadow rounded-md bg-pink-dark hover:bg-pink py-1 mt-4">Buy on Pancakeswap</a>
           <p className="text-white py-4">Or</p>
-          <div className="grid grid-cols-12 w-10/12 md:w-4/12 lg:w-3/12 items-center mx-auto border border-white rounded-md p-1 mb-6">
-            <p className="col-span-11 text-white">0x329847350808942804042SDx</p>
-            <img className="w-6" src={clipCopy} />
-          </div>
-          <p className="mt-6 mb-14"><a className="text-white text-opacity-50 underline" href="#">How to setup wallet and buy</a></p>
-          <p><a className="text-white underline text-2xl" href="#">Vaporblitz Tokenomics</a></p>
+          <CopyClipBoard />
+          <SetupWalletModal />
+          <TokenomicsModal />
         </Box>
 
         <div className="h-24 bg-black"></div>

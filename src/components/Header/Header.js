@@ -1,6 +1,5 @@
-// import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Disclosure } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import './Header.css';
 import logo from '../../assets/logo.png'
 
@@ -23,14 +22,14 @@ export default function Header() {
             <div className="relative grid grid-cols-12 gap-4 items-center bg-black text-white">
               <div className="hidden md:block col-span-2"><img className="w-20 ml-2 pt-2 pb-1" src={logo} /></div>
               <div className="col-span-8 md:col-span-5">
-                <div className="flex justify-around text-sm md:text-base px-2 py-4">
+                <div className="flex justify-between md:justify-around text-sm md:text-base px-2 py-4">
                   {navigation.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
                       className={classNames(
-                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'px-3 py-2 rounded-md text-sm font-medium'
+                        item.current ? 'text-white' : 'hover:text-white',
+                        'px-3 py-2 rounded-md text-sm'
                       )}
                       aria-current={item.current ? 'page' : undefined}
                     >
@@ -41,8 +40,8 @@ export default function Header() {
               </div>
               <div className="hidden md:block col-span-5">
                 <div className="flex justify-center gap-6">
-                  <a href="#" className="border border-white rounded-xl pl-4 pr-4">Play for Free</a>
-                  <a href="#" className="bg-pink-light rounded-xl pl-4 pr-4">Connect Wallet</a>
+                  <button type="button" className="border border-white rounded-xl pl-4 pr-4">Play for Free</button>
+                  <button type="button" className="bg-pink-light rounded-xl pl-4 pr-4">Connect Wallet</button>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-1 flex items-center md:hidden">
@@ -60,9 +59,9 @@ export default function Header() {
 
             <Disclosure.Panel className="md:hidden">
               <div className="grid justify-center gap-2 bg-black text-white py-3">
-                  <a href="#" className="border border-white rounded-xl pl-4 pr-4">Play for Free</a>
-                  <a href="#" className="bg-pink-light rounded-xl pl-4 pr-4">Connect Wallet</a>
-                </div>
+                <button type="button" className="border border-white rounded-xl pl-4 pr-4">Play for Free</button>
+                <button type="button" className="bg-pink-light rounded-xl pl-4 pr-4">Connect Wallet</button>
+              </div>
             </Disclosure.Panel>
           </>
         )}

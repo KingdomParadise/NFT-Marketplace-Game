@@ -1,8 +1,8 @@
-import React, {useState,useEffect} from 'react';
+// import React, {useState,useEffect} from 'react';
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import './App.css';
-import loader from "./assets/loading.gif"
+// import loader from "./assets/loading.gif"
 
 function App() {
   // const [isLoading, setLoading] = useState(true);
