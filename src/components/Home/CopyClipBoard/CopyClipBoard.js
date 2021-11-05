@@ -1,10 +1,17 @@
-import React, {useState, Fragment} from 'react'
+import React, {useState, useEffect, Fragment} from 'react'
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 import { Popover, Transition } from '@headlessui/react'
 import clipCopy from '../../../assets/clip-copy.png'
 
 export default function CopyClipBoard() {
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log("closed");
+    }, 1000);
+    return () => clearTimeout(timer);
+  });
 
   return(
     <div>
@@ -18,9 +25,9 @@ export default function CopyClipBoard() {
             >
               <CopyToClipboard text="0x329847350808942804042SDx"
                 onCopy={() => setCopied(true)}>
-                <div type="button" className="grid grid-cols-12 items-center mx-auto border border-white rounded-md p-1">
+                <div type="button" className="grid grid-cols-12 items-center mx-auto border border-white rounded-md p-1 hover:opacity-70">
                   <p className="col-span-11 text-white">0x329847350808942804042SDx</p>
-                  <img className="w-6 hover:opacity-70" src={clipCopy} />
+                  <img className="w-6" src={clipCopy} />
                 </div>
               </CopyToClipboard>
             </Popover.Button>
@@ -34,7 +41,7 @@ export default function CopyClipBoard() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              {copied ? <Popover.Panel className="absolute z-10 w-screen max-w-min transform -translate-x-1/2 left-1/2 top-10"><div className="px-4 text-white rounded-lg custom-box-shadow bg-pink-dark">Copied</div></Popover.Panel> : null}
+              {copied ? <Popover.Panel className="absolute z-10 max-w-xs transform -translate-x-1/2 left-1/2 top-10"><div className="px-4 text-white rounded-lg custom-box-shadow bg-pink-800">Contract Address Copied</div></Popover.Panel> : null}
             </Transition>
           </>
         )}

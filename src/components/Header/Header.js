@@ -1,6 +1,5 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import './Header.css';
 import logo from '../../assets/logo.png'
 
 const navigation = [
@@ -41,7 +40,7 @@ export default function Header() {
               <div className="hidden md:block col-span-5">
                 <div className="flex justify-center gap-6">
                   <button type="button" className="border border-white rounded-xl pl-4 pr-4">Play for Free</button>
-                  <button type="button" className="bg-pink-light rounded-xl pl-4 pr-4">Connect Wallet</button>
+                  <button type="button" className="bg-pink-300 rounded-xl pl-4 pr-4">Connect Wallet</button>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-1 flex items-center md:hidden">
@@ -60,7 +59,7 @@ export default function Header() {
             <Disclosure.Panel className="md:hidden">
               <div className="grid justify-center gap-2 bg-black text-white py-3">
                 <button type="button" className="border border-white rounded-xl pl-4 pr-4">Play for Free</button>
-                <button type="button" className="bg-pink-light rounded-xl pl-4 pr-4">Connect Wallet</button>
+                <button type="button" className="bg-pink-300 rounded-xl pl-4 pr-4">Connect Wallet</button>
               </div>
             </Disclosure.Panel>
           </>

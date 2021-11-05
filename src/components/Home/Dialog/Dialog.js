@@ -56,7 +56,7 @@ export function SetupWalletModal() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block w-full max-w-sm p-8 my-8 overflow-hidden text-left text-white align-middle transition-all transform bg-pink-dark rounded-2xl modal-wrapper">
+              <div className="inline-block w-full max-w-sm px-4 py-6 sm:p-8 my-8 overflow-hidden sm:text-left text-white align-middle transition-all transform bg-pink-800 rounded-2xl modal-wrapper">
                 <Dialog.Title
                   as="h3"
                   className="text-3xl text-shadow mb-10"
@@ -72,13 +72,13 @@ export function SetupWalletModal() {
 
                   <p className="text-md mt-9 mb-5">2) Buy BNB in the app or Binance</p>
                   <div className="w-4/5 mx-auto">
-                    <button type="button" className="w-full custom-box-shadow rounded py-2 px-4 mb-5 bg-pink-dark">Get BNB on Metamask</button>
-                    <button type="button" className="w-full custom-box-shadow rounded py-2 px-4 bg-pink-dark">Get BNB on Trust Wallet</button>
+                    <button type="button" className="w-full custom-box-shadow rounded py-2 px-4 mb-5 bg-pink-800">Get BNB on Metamask</button>
+                    <button type="button" className="w-full custom-box-shadow rounded py-2 px-4 bg-pink-800">Get BNB on Trust Wallet</button>
                   </div>
 
                   <p className="text-md mt-9 mb-4">3) Now you're ready to buy $VPR!</p>
                   <div className="w-4/5 mx-auto">
-                    <button type="button" className="w-full custom-box-shadow rounded py-2 px-4 bg-purple-dark">Buy $VPR on Pancakeswap</button>
+                    <button type="button" className="w-full custom-box-shadow rounded py-2 px-4 bg-purple-700">Buy $VPR on Pancakeswap</button>
                   </div>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export function TokenomicsModal() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block w-full max-w-sm p-6 my-8 overflow-hidden text-left text-white text-center align-middle transition-all transform bg-pink-dark rounded-2xl modal-wrapper">
+              <div className="inline-block w-full max-w-sm p-6 my-8 overflow-hidden text-left text-white text-center align-middle transition-all transform bg-pink-800 rounded-2xl modal-wrapper">
                 <Dialog.Title
                   as="h3"
                   className="text-2xl uppercase text-shadow mb-10"
@@ -153,9 +153,9 @@ export function TokenomicsModal() {
                   <DetailText text="Total Tokens: 500,000,000" />
                   <DetailText text="Team: 5% (15% LOCKED)" />
                   <DetailText text1="Token Time Locked Contract:" text2="0x003992931901340931" multi="true" />
-                  <DetailText text1="Token Liquidity Locked:" text2="dxlocker liquidity locked" multi="true" underline="true" />
-                  <DetailText text="LIQUIDITY LOCKED ON DXLOCKER" color="green" />
-                  <p className="text-2xl uppercase text-shadow mt-12 mb-2">Funds use:</p>
+                  <DetailText text1="Token Liquidity Locked:" text2="liquidity locked" multi="true" underline="true" />
+                  <DetailText text="LIQUIDITY LOCKED" color="green" />
+                  <p className="text-2xl uppercase text-shadow mt-10 mb-2">Funds use:</p>
                   <DetailText text="50% Marketing" />
                   <DetailText text="50% Game Development and Updates" />
                 </div>

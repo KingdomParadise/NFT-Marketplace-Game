@@ -4,9 +4,11 @@ import Box from './Box/Box';
 import ItemList from './ItemList/ItemList';
 import {SetupWalletModal, TokenomicsModal} from './Dialog/Dialog';
 import CopyClipBoard from './CopyClipBoard/CopyClipBoard';
+import Footer from '../Footer/Footer';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import logo from '../../assets/logo.png';
 import bannerLogo from '../../assets/banner-logo.png';
 import dropdownArrow from '../../assets/dropdown-arrow.png';
 
@@ -33,9 +35,8 @@ import deadDice from '../../assets/dead-dice.png';
 import blueBoxLg from '../../assets/blue-box-lg.png';
 import yellowBoxLg from '../../assets/yellow-box-lg.png';
 import purpleBoxLg from '../../assets/purple-box-lg.png';
-import pinkBlend from '../../assets/pink-blend.png'
-import walletBlue from '../../assets/wallblue.png';
-import baseModel from '../../assets/base-model.png';
+import walletBlue from '../../assets/wallblue.gif';
+import baseModel from '../../assets/base-model.gif';
 import roadBar from '../../assets/road-bar.png';
 import roadTri from '../../assets/road-tri.png';
 
@@ -44,38 +45,37 @@ export default function Home() {
       <>
         <div className="grid justify-items-center banner-wrapper pb-8">
           <div className="flex flex-row-reverse w-11/12 md:w-9/12 justify-items-end gap-2 my-4">
-            <p className="flex items-center text-center w-8 h-8 bg-purple-light rounded-3xl"><img className="p-1.5" src={telegram} /></p>
-            <p className="flex items-center text-center w-8 h-8 bg-pink-light rounded-3xl"><img className="p-1.5" src={discord} /></p>
+            <a href="#" className="flex items-center text-center w-8 h-8 bg-purple-400 rounded-3xl"><img className="p-1.5" src={telegram} /></a>
+            <a href="#" className="flex items-center text-center w-8 h-8 bg-pink-300 rounded-3xl"><img className="p-1.5" src={discord} /></a>
           </div>          
           <img className="w-4/12" src={bannerLogo} />
-          <a className="bg-pink-light w-32 p-2 rounded-lg text-white mb-3 text-shadow custom-box-shadow" href="#">Play For Free</a>
-          <a className="bg-purple-light w-32 p-2 rounded-lg text-white text-shadow custom-box-shadow" href="#">Marketplace</a>
+          <a className="bg-pink-300 hover:bg-pink-500 w-32 p-2 rounded-lg text-white mb-3 text-shadow custom-box-shadow hover:brightness-50" href="#">Play For Free</a>
+          <a className="bg-purple-300 hover:bg-purple-500 w-32 p-2 rounded-lg text-white text-shadow custom-box-shadow" href="#">Marketplace</a>
           <a className="w-10 pt-10" href="#"><img src={dropdownArrow} /></a>
         </div>
 
-        <Box title="What is Vaporblitz?" className="text-center bg-pink-dark">
-          <p className="text-lg text-white text-opacity-50 w-5/12 mx-auto py-4">
-            Vaporblitz is a PVP & P2E game where you fight against other players online for BNB or VPR. <br/>
-            All in-game items are NFTS.
+        <Box title="What is Vaporblitz?" className="text-center bg-pink-800">
+          <p className="text-lg text-white text-opacity-50 w-11/12 mx-auto py-4">
+            Vaporblitz is a PVP & P2E game where you fight against other players online for BNB or VPR. All in-game items are NFTS.            
           </p>
-          <p className="text-lg text-white text-opacity-50 w-5/12 mx-auto pb-3">
+          <p className="text-lg text-white text-opacity-50 w-11/12 mx-auto pb-6">
           Our goal is for Vaporblitz to be fun whilst also being able to make money in the process.
           </p>
         </Box>
 
-        <Box title="Collect NFT Items" sub="All Usable In-Game!" className="bg-purple-dark pb-5">
+        <Box title="Collect NFT Items" sub="All Usable In-Game!" className="bg-purple-700 pb-5">
           <ItemList title="NFT WEAPON SKINS" backSrc={purpleBox} innerSrc1={wpSkin1} innerSrc2={wpSkin2} innerSrc3={wpSkin3} innerSrc4={wpSkin3} />
           <ItemList title="NFT ACCESSORIES" backSrc={blueBox} innerSrc1={acs1} innerSrc2={acs2} innerSrc3={acs3} innerSrc4={acs4} />
         </Box>
 
-        <Box title="Extensive PVP System" sub="Different weapons, equipment and maps!" className="bg-pink-dark pb-5">
+        <Box title="Extensive PVP System" sub="Different weapons, equipment and maps!" className="bg-pink-800 pb-5">
           <div className="w-10/12 mx-auto mt-10">
             <div className="grid md:grid-cols-3 gap-5 md:gap-10">
               <div className="w-3/5 md:w-full mx-auto">
                 <div className="flex justify-center items-center relative">
                   <img src={blueBoxLg} className="w-full" />
                   <img src={iceGundle} className="absolute h-3/5 mb-10" />
-                  <p className="absolute bottom-7 sm:bottom-12 md:bottom-6 lg:bottom-12 text-lg sm:text-xl md:text-2xl text-white">Fun Weapons</p>
+                  <p className="absolute bottom-1/7 text-lg sm:text-xl md:text-2xl text-white">Fun Weapons</p>
                 </div>    
                 <p className="md:w-4/5 mx-auto mt-2 text-white text-opacity-50 md:text-lg">Over 10 Weapons with different abilities</p>
               </div>
@@ -88,7 +88,7 @@ export default function Home() {
                     <img src={grenade} className="h-3/6 mb-6" />
                     <img src={emp} className="h-3/6 mb-6" />
                     </div>
-                  <p className="absolute bottom-7 sm:bottom-12 md:bottom-6 lg:bottom-12 text-lg sm:text-xl md:text-2xl text-white">Equipment</p>
+                  <p className="absolute bottom-1/7 text-lg sm:text-xl md:text-2xl text-white">Equipment</p>
                 </div>
                 <p className="md:w-4/5 mx-auto mt-2 text-white text-opacity-50 md:text-lg">Different Equipment which helps in combat</p>              
               </div>
@@ -97,7 +97,7 @@ export default function Home() {
                 <div className="flex justify-center items-center relative">
                   <img src={purpleBoxLg} className="w-full" />
                   <img src={vaporcrate} className="absolute h-3/5 mb-10" />
-                  <p className="absolute bottom-7 sm:bottom-12 md:bottom-6 lg:bottom-12 text-lg sm:text-xl md:text-2xl text-white">Airdrops</p>
+                  <p className="absolute bottom-1/7 text-lg sm:text-xl md:text-2xl text-white">Airdrops</p>
                 </div>
                 <p className="md:w-4/5 mx-auto mt-2 text-white text-opacity-50 md:text-lg">Airdrops come in with different rare weapons</p>
               </div>
@@ -110,40 +110,40 @@ export default function Home() {
 
         <FullCarousel />
 
-        <Box title="Fight Different Bosses for Crypto" className="bg-purple-dark md:bg-pink-dark">            
-          <div className="grid md:flex md:justify-around">
+        <Box title="Fight Different Bosses for Crypto" className="bg-purple-700 md:bg-pink-800">            
+          <div className="grid md:grid-cols-3">
             <div className="inner-box">
               <img className="p-6 md:p-4 mx-auto" src={signalSlicer} />
-              <div className="flex items-center text-center h-24 md:h-40 mb-5 md:mb-0 bg-purple-dark">
+              <div className="flex items-center text-center h-24 md:h-40 mb-5 md:mb-0 bg-purple-700">
                 <p className="text-white text-opacity-50 text-xl w-3/5 mx-auto"><span className="text-red">Signal Slicer</span> launches deadly signals at the player and is able to freeze them.</p>
               </div>
             </div>
-            <div className="inner-box bg-pink-dark">
+            <div className="inner-box bg-pink-800">
               <img className="pt-6 md:p-4 mx-auto" src={robsquid} />
-              <div className="flex items-center text-center mx-auto h-24 md:h-40 mb-5 md:mb-0 bg-pink-dark md:bg-purple-dark">
+              <div className="flex items-center text-center mx-auto h-24 md:h-40 mb-5 md:mb-0 bg-pink-800 md:bg-purple-700">
                 <p className="text-white text-opacity-50 text-xl w-3/5 mx-auto"><span className="text-yellow">Robosquid</span> launches fruit based attacks, and summons fruit based enemies.</p>
               </div>
             </div>
             <div className="inner-box">
               <img className="pt-6 pb-2 md:p-4 mx-auto" src={deadDice} />
-              <div className="flex items-center text-center mx-auto h-24 md:h-40 mb-5 md:mb-0 bg-purple-dark">
+              <div className="flex items-center text-center mx-auto h-24 md:h-40 mb-5 md:mb-0 bg-purple-700">
                 <p className="text-white text-opacity-50 text-xl w-3/5 mx-auto"><span className="text-yellow-dark">Dead Dice</span> launches multiple attacks which are all based on his slot machine.</p>
               </div>              
             </div>            
           </div>
         </Box>
 
-        <Box title="Customise your Character with NFT Items" className="space-dress">
-          <img className="h-72 mx-auto mt-32 sm:mt-40" src={baseModel} />
+        <Box title="Customise your Character with NFT Items" className="relative space-dress">
+          <img className="absolute transform -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2" src={baseModel} />
         </Box>
 
-        <Box title="Own and Customise an NFT Home" sub="Buy a property, customise it and earn daily VPR from it." className="px-4 bg-pink-dark">
+        <Box title="Own and Customise an NFT Home" sub="Buy a property, customise it and earn daily VPR from it." className="px-4 bg-pink-800">
           <div className="md:w-4/6 mx-auto">
-            <img className="py-14" src={walletBlue} />
+            <img className="py-14 w-full" src={walletBlue} />
           </div>
         </Box>
 
-        <Box title="Roadmap" sub="Our plans for the future" className="bg-purple-dark">
+        <Box title="Roadmap" sub="Our plans for the future" className="bg-purple-700">
           <img className="h-3 w-full mt-6 px-3 md:px-6" src={roadBar} />
           <div className="grid grid-cols-3 gap-10">
             {
@@ -155,19 +155,19 @@ export default function Home() {
           <RoadMapCarousel />
         </Box>
 
-        <Box title="Vaporblitz Team" sub="The projects core team" className="bg-pink-dark">
+        <Box title="Vaporblitz Team" sub="The projects core team" className="bg-pink-800">
           <ItemCarousel />
         </Box>
 
-        <Box title="Buy $VPR" sub="Buy the games main token on pancakeswap" className="text-center bg-purple-dark pb-8">
-          <a href="#" className="flex justify-center w-10/12 md:w-4/12 lg:w-3/12 mx-auto text-white custom-box-shadow rounded-md bg-pink-dark hover:bg-pink py-1 mt-4">Buy on Pancakeswap</a>
+        <Box title="Buy $VPR" sub="Buy the games main token on pancakeswap" className="text-center bg-purple-700 pb-8">
+          <a href="#" className="flex justify-center w-10/12 md:w-4/12 lg:w-3/12 mx-auto text-white custom-box-shadow rounded-md bg-pink-800 hover:bg-pink-900 py-1 mt-4">Buy on Pancakeswap</a>
           <p className="text-white py-4">Or</p>
           <CopyClipBoard />
           <SetupWalletModal />
           <TokenomicsModal />
         </Box>
 
-        <div className="h-24 bg-black"></div>
+        <Footer logo={logo} telegram={telegram} discord={discord} />
       </>
     )
 }

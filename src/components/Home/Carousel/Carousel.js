@@ -51,13 +51,13 @@ export function FullCarousel() {
     <div className="-mb-2">
       <Slider {...settings}>
         <div>
-          <img src={firstCarousel} alt="" />
+          <img src={firstCarousel} alt="" className="w-full" />
         </div>
         <div>
-          <img src={firstCarousel} alt="" />
+          <img src={firstCarousel} alt="" className="w-full" />
         </div>
         <div>
-          <img src={firstCarousel} alt="" />
+          <img src={firstCarousel} alt="" className="w-full" />
         </div>
       </Slider>
     </div>
@@ -163,7 +163,7 @@ const roadMap = [
 function RoadMapItem(props) {
   return(
     <div className="text-center text-white">              
-      <div className="w-10/12 mx-auto mt-2 bg-purple-deep rounded custom-box-shadow p-1 md:p-2 mb-3 md:text-lg">{props.date}</div>
+      <div className="w-10/12 mx-auto mt-2 bg-pink-800 rounded custom-box-shadow p-1 md:p-2 mb-3 md:text-lg">{props.date}</div>
       {props.detail.map((item) => (
         <p key={item.name} className="text-sm md:text-base">{item.name}</p>
       ))}

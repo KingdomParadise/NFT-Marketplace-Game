@@ -7,10 +7,10 @@
 }
 
 .banner-wrapper {
-  background-image: url("../../assets/banner-back.png"), url("../../assets/banner-tree.png");
+  background-image: url("../../assets/banner-tree.png"), url("../../assets/banner-back.png");
   background-repeat: no-repeat, no-repeat;
-  background-size: cover, 80%;
-  background-position: center, bottom -10px left;
+  background-size: 85%, cover;
+  background-position: bottom -10px left, center;
 }
 
 .inner-box img {
