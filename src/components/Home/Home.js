@@ -1,8 +1,7 @@
 import './Home.css';
-import {FullCarousel, ItemCarousel, RoadMapCarousel} from './Carousel/Carousel';
+import { FullCarousel, ItemCarousel, RoadMapCarousel, NFTCarousel } from './Carousel/Carousel';
 import Box from './Box/Box';
-import ItemList from './ItemList/ItemList';
-import {SetupWalletModal, TokenomicsModal} from './Dialog/Dialog';
+import { SetupWalletModal, TokenomicsModal } from './Dialog/Dialog';
 import CopyClipBoard from './CopyClipBoard/CopyClipBoard';
 import Footer from '../Footer/Footer';
 
@@ -65,8 +64,15 @@ export default function Home() {
         </Box>
 
         <Box title="Collect NFT Items" sub="All Usable In-Game!" className="bg-purple-700 pb-5">
-          <ItemList title="NFT WEAPON SKINS" backSrc={purpleBox} innerSrc1={wpSkin1} innerSrc2={wpSkin2} innerSrc3={wpSkin3} innerSrc4={wpSkin3} />
-          <ItemList title="NFT ACCESSORIES" backSrc={blueBox} innerSrc1={acs1} innerSrc2={acs2} innerSrc3={acs3} innerSrc4={acs4} />
+          <div className="w-10/12 mx-auto py-2">
+            <p className="text-sm uppercase text-white text-opacity-50 text-left pl-5 pb-1">NFT weapon skins</p>
+            <NFTCarousel weapon="true" />
+          </div>
+
+          <div className="w-10/12 mx-auto py-2">
+            <p className="text-sm uppercase text-white text-opacity-50 text-left pl-5 pb-1">NFT Accessories</p>
+            <NFTCarousel/>
+          </div>
         </Box>
 
         <Box title="Extensive PVP System" sub="Different weapons, equipment and maps!" className="bg-pink-800 pb-5">
@@ -104,6 +110,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          
           {/* <div>
             <img className="h-10 w-full" src={pinkBlend} />
           </div> */}
