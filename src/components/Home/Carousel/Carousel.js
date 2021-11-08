@@ -299,7 +299,7 @@ export function NFTCarousel(props) {
         }
       },
       {
-        breakpoint: 640,
+        breakpoint: 414,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -314,42 +314,42 @@ export function NFTCarousel(props) {
         <div className="">
           <Slider {...settings}>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:18" style={purpleWrap}>
+              <div className="py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-24 4xl:py-28" style={purpleWrap}>
                 <img src={wp1} className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:18" style={purpleWrap}>
+              <div className="py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-24 4xl:py-28" style={purpleWrap}>
                 <img src={wp2} className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:18" style={purpleWrap}>
+              <div className="py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-24 4xl:py-28" style={purpleWrap}>
                 <img src={wp3} className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:18" style={purpleWrap}>
+              <div className="py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-24 4xl:py-28" style={purpleWrap}>
                 <img src={wp4} className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:18" style={purpleWrap}>
+              <div className="py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-24 4xl:py-28" style={purpleWrap}>
                 <img src={wp5} className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:18" style={purpleWrap}>
+              <div className="py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-24 4xl:py-28" style={purpleWrap}>
                 <img src={wp9} className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:18" style={purpleWrap}>
+              <div className="py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-24 4xl:py-28" style={purpleWrap}>
                 <img src={wp10} className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:18" style={purpleWrap}>
+              <div className="py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-24 4xl:py-28" style={purpleWrap}>
                 <img src={wp11} className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto" />
               </div>
             </div>            
@@ -359,37 +359,37 @@ export function NFTCarousel(props) {
         <div className="">
           <Slider {...settings}>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:16" style={blueWrap}>
+              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:py-20 3xl:py-24 4xl:py-28" style={blueWrap}>
                 <img src={hat1} className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:16" style={blueWrap}>
+              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:py-20 3xl:py-24 4xl:py-28" style={blueWrap}>
                 <img src={hat2} className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:16" style={blueWrap}>
+              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:py-20 3xl:py-24 4xl:py-28" style={blueWrap}>
                 <img src={hat3} className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:16" style={blueWrap}>
+              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:py-20 3xl:py-24 4xl:py-28" style={blueWrap}>
                 <img src={hat4} className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:16" style={blueWrap}>
+              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:py-20 3xl:py-24 4xl:py-28" style={blueWrap}>
                 <img src={hat5} className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:16" style={blueWrap}>
+              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:py-20 3xl:py-24 4xl:py-28" style={blueWrap}>
                 <img src={hat6} className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto" />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:16" style={blueWrap}>
+              <div className="py-9 md:py-10 lg:py-12 xl:py-14 2xl:py-20 3xl:py-24 4xl:py-28" style={blueWrap}>
                 <img src={hat8} className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto" />
               </div>
             </div>        

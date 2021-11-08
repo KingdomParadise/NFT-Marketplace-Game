@@ -7,10 +7,8 @@
 }
 
 .banner-wrapper {
-  background-image: url("../../assets/banner-tree.png"), url("../../assets/banner-back.png");
-  background-repeat: no-repeat, no-repeat;
-  background-size: 85%, cover;
-  background-position: bottom -10px left, center;
+  background: url("../../assets/banner-back.png") center no-repeat;
+  background-size: cover;
 }
 
 .inner-box img {
@@ -22,9 +20,10 @@
 }
 
 .space-dress {
-  background: url("../../assets/space-dressing.png") center no-repeat;
+  background: url("../../assets/space-dressing.png") no-repeat;
   background-size: cover;
-  min-height: 750px;
+  background-position: bottom -80px center;
+  min-height: 1300px;  
 }
 
 .modal-wrapper {

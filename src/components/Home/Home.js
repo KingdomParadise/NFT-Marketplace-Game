@@ -10,19 +10,8 @@ import "slick-carousel/slick/slick-theme.css";
 import logo from '../../assets/logo.png';
 import bannerLogo from '../../assets/banner-logo.png';
 import dropdownArrow from '../../assets/dropdown-arrow.png';
-
 import discord from '../../assets/discord.png'; 
 import telegram from '../../assets/telegram.png';
-import acs1 from '../../assets/accessory1.png';
-import acs2 from '../../assets/accessory2.png';
-import acs3 from '../../assets/accessory3.png';
-import acs4 from '../../assets/accessory4.png';
-import wpSkin1 from '../../assets/wp-skin1.svg';
-import wpSkin2 from '../../assets/wp-skin2.svg';
-import wpSkin3 from '../../assets/wp-skin3.svg';
-import blueBox from '../../assets/blue-box.png';
-import purpleBox from '../../assets/purple-box.png';
-
 import iceGundle from '../../assets/ice-gundle.png';
 import flashBang from '../../assets/flashbang.png';
 import grenade from '../../assets/grenade.png';
@@ -65,12 +54,12 @@ export default function Home() {
 
         <Box title="Collect NFT Items" sub="All Usable In-Game!" className="bg-purple-700 pb-5">
           <div className="w-10/12 mx-auto py-2">
-            <p className="text-sm uppercase text-white text-opacity-50 text-left pl-5 pb-1">NFT weapon skins</p>
+            <p className="text-sm uppercase text-white text-opacity-50 text-left pl-3 sm:pl-5 pb-1">NFT weapon skins</p>
             <NFTCarousel weapon="true" />
           </div>
 
           <div className="w-10/12 mx-auto py-2">
-            <p className="text-sm uppercase text-white text-opacity-50 text-left pl-5 pb-1">NFT Accessories</p>
+            <p className="text-sm uppercase text-white text-opacity-50 text-left pl-3 sm:pl-5 pb-1">NFT Accessories</p>
             <NFTCarousel/>
           </div>
         </Box>
@@ -109,16 +98,12 @@ export default function Home() {
                 <p className="md:w-4/5 mx-auto mt-2 text-white text-opacity-50 md:text-lg">Airdrops come in with different rare weapons</p>
               </div>
             </div>
-          </div>
-          
-          {/* <div>
-            <img className="h-10 w-full" src={pinkBlend} />
-          </div> */}
+          </div>        
         </Box>
 
         <FullCarousel />
 
-        <Box title="Fight Different Bosses for Crypto" className="bg-purple-700 md:bg-pink-800">            
+        <Box title="Fight Different Bosses for Crypto" className="relative z-10 bg-purple-700 md:bg-pink-800 -mb-20">            
           <div className="grid md:grid-cols-3">
             <div className="inner-box">
               <img className="p-6 md:p-4 mx-auto" src={signalSlicer} />
@@ -141,13 +126,13 @@ export default function Home() {
           </div>
         </Box>
 
-        <Box title="Customise your Character with NFT Items" className="relative space-dress">
-          <div className="relative mt-8 mx-2 md:mx-8 h-16 md:h-auto">
+        <div className="relative space-dress pt-32">
+          <div className="relative mx-2 md:mx-8 h-16 md:h-auto">
             <img src={textbox} className="mx-auto h-full" />
             <p className="absolute transform -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2 text-sm sm:text-base md:text-2xl lg:text-3xl text-white">Customize your Character with NFT Items</p>
           </div>
-          <img className="absolute transform -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2" src={baseModel} />
-        </Box>
+          <img className="absolute transform -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2 h-1/2" src={baseModel} />
+        </div>
 
         <Box title="Own and Customise an NFT Home" sub="Buy a property, customise it and earn daily VPR from it." className="px-4 bg-pink-800">
           <div className="md:w-4/6 mx-auto">

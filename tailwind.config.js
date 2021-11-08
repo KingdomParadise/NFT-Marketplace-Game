@@ -1,11 +1,15 @@
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
-  theme: {
+  theme: {    
     extend: {
       inset: {
         '1/7': '14.3%',
-       }
+       },
+      screens: {
+        '3xl': '1740px',
+        '4xl': '1960px'
+      }
     },
     colors: {
       transparent: 'transparent',
