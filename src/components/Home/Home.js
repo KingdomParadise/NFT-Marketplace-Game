@@ -16,7 +16,9 @@ import "slick-carousel/slick/slick-theme.css";
 import logo from "../../assets/logo.png";
 import bannerLogo from "../../assets/banner-logo.png";
 
-import lootbox from "../../assets/marketplace/lootbox.png"
+import lootbox1 from "../../assets/lootbox1.png";
+import lootbox2 from "../../assets/lootbox2.png";
+import lootbox3 from "../../assets/lootbox3.png";
 
 import discord from "../../assets/discord.png";
 import telegram from "../../assets/telegram.png";
@@ -90,9 +92,9 @@ export default function Home() {
         </p>
 
         <div className="grid grid-cols-3 gap-24 w-10/12 mt-4 mx-auto">
-          <Lootbox src={lootbox} title="Basic Vaporcrate" desc="2 Weapon Skins, 1 Hat and 1 Accessory" price="0.45 BNB" count="1000" />
-          <Lootbox src={lootbox} title="Epic Vaporcrate" desc="5 Weapon Skins, 3 Hats and 3 Accessories" price="1.25 BNB" count="500" />
-          <Lootbox src={lootbox} title="Legendary Vaporcrate" desc="7 Weapon Skins, 1 Property, 4 Hats, 6 Accessories and 2 Game Beta Keys" price="2.25 BNB" count="500" />
+          <Lootbox src={lootbox1} title="Basic Vaporcrate" desc="2 Weapon Skins, 1 Hat and 1 Accessory" price="0.45" count="1000" />
+          <Lootbox src={lootbox2} title="Epic Vaporcrate" desc="5 Weapon Skins, 3 Hats and 3 Accessories" price="1.25" count="750" />
+          <Lootbox src={lootbox3} title="Legendary Vaporcrate" desc="7 Weapon Skins, 1 House, 4 Hats, 6 Accessories and 2 Game Beta Keys" price="2.25" count="250" />
         </div>
       </Box>
 

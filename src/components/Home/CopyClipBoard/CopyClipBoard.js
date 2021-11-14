@@ -8,7 +8,6 @@ export default function CopyClipBoard() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log("closed");
     }, 1000);
     return () => clearTimeout(timer);
   });

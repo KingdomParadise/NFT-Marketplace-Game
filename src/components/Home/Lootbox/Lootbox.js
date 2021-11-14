@@ -1,9 +1,344 @@
 import {useState, useEffect} from 'react'
+import Web3 from 'web3'
+
+const contract_abi = [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			}
+		],
+		"name": "allowance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "buyToken",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "subtractedValue",
+				"type": "uint256"
+			}
+		],
+		"name": "decreaseAllowance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "addedValue",
+				"type": "uint256"
+			}
+		],
+		"name": "increaseAllowance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
+
+const contract_address = {
+  "Basic Vaporcrate" : "0x3302D214Cba55dC5E7D034eB1741312A1DF8DAFE",
+  "Epic Vaporcrate" : "0xF9069bB927dcB6f3296Ca7BA3Fd2D4a5031D6F44",
+  "Legendary Vaporcrate" : "0xa2d1298Dd09afAA0eB8d1E5FA142aE38D88896b7",
+};
+
 export default function Lootbox(props) {
-  const [buyCount, setBuy] = useState(0);
+  const [tokenRemain, setTokenRemain] = useState(props.count);
+
+  useEffect(() => {
+    if(window.ethereum === undefined)
+      return;
+    window.ethereum
+      .request({ method: 'eth_accounts' })
+      .then()
+      .catch((err) => {
+        console.error(err);
+    });
+
+    const web3 = new Web3(window.ethereum);
+    const tokenContract = new web3.eth.Contract(contract_abi, contract_address[props.title]);
+    tokenContract.methods.balanceOf(contract_address[props.title]).call().then((data) => {setTokenRemain(data);});
+  }, []);
 
   function handleClick() {
-    setBuy(buyCount + 1);
+    if(!window.ethereum) {
+      alert("Please install metamask!");
+      return;
+    }
+    if(!window.ethereum.selectedAddress) {
+      alert("Please connect wallet!");
+      return;
+    }
+    window.ethereum
+      .request({
+        method: 'eth_sendTransaction',
+        params: [
+          {
+            from: window.ethereum.selectedAddress,
+            to: contract_address[props.title],
+            value: "0x"+(props.price * (10**18)).toString(16),
+            data: "0x2d296bf1" + "0000000000000000000000000000000000000000000000000000000000000001",
+          },
+        ],
+      })
+      .then((data) => setTokenRemain(tokenRemain - 1))
+      .catch((error) => {});
   }
 
   return (
@@ -12,10 +347,10 @@ export default function Lootbox(props) {
         <img src={props.src} className="mx-auto p-5" />
         <p className="text-white text-base">{props.title}</p>
         <p className="text-white text-opacity-50 text-xs py-1">{props.desc}</p>
-        <p className="text-white text-base">{props.price}</p>
+        <p className="text-white text-base">{props.price + ' BNB'}</p>
         <button type="button" onClick={handleClick} className="border border-white rounded-lg text-white hover:opacity-70 py-1 px-5 mt-2">Buy Now</button>
       </div>
-      <p className="text-white text-opacity-50 text-xs py-2">{props.count - buyCount}/{props.count} Left</p>
+      <p className="text-white text-opacity-50 text-xs py-2">{tokenRemain}/{props.count} Left</p>
     </div>
   );
 }

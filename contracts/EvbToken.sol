@@ -2,7 +2,7 @@
 
 pragma solidity >=0.8.0 <0.9.0;
 
-contract BvbToken {
+contract EvbToken {
     mapping(address => uint256) private _balances;
 
     mapping(address => mapping(address => uint256)) private _allowances;
@@ -20,8 +20,9 @@ contract BvbToken {
         _name = "Epic Varporcrate Box";
         _symbol = "EVB";
         _price_in_bnb = 1.25 * (10**18);
-        _master_wallet = address(0xD79bdB9eB68636E1de8D448242a75aB211FB7FA8);
-        _mint(address(this), 500);
+        // _master_wallet = address(0xD79bdB9eB68636E1de8D448242a75aB211FB7FA8);
+        _master_wallet = address(0x35d3Dc52BB3bBeADDecF5365853b0a4ad8902a93);
+        _mint(address(this), 750);
     }
     
     event Transfer(address indexed from, address indexed to, uint256 value);

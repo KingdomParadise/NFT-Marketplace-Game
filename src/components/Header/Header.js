@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../assets/logo.png";
@@ -22,6 +23,45 @@ function classNames(...classes) {
 }
 
 export default function Header() {
+  const [address, setAddress] = useState(null);
+
+  useEffect(() => {
+    if(window.ethereum === undefined)
+      return;
+    window.ethereum.on('accountsChanged', handleAccountsChanged);
+
+    window.ethereum
+      .request({ method: 'eth_accounts' })
+      .then(handleAccountsChanged)
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  function handleAccountsChanged(accounts) {
+    if(accounts[0])
+      setAddress(`${accounts[0].slice(0, 5)}...${accounts[0].slice(-4)}`);
+    else
+      setAddress(accounts[0]);
+  }
+
+  function handleConnectWallet() {
+    if(window.ethereum === undefined) {
+      alert("Please install metamask!");
+      return;
+    }
+    window.ethereum
+      .request({ method: 'eth_requestAccounts' })
+      .then(handleAccountsChanged)
+      .catch((error) => {
+        if (error.code === 4001) {
+          console.log('Please connect to MetaMask.');
+        } else {
+          console.error(error);
+        }
+      });
+  }
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -67,8 +107,9 @@ export default function Header() {
                 <button
                   type="button"
                   className="bg-pink-300 rounded-xl pl-4 pr-4"
+                  onClick={handleConnectWallet}
                 >
-                  Connect Wallet
+                  {address ? address : "Connect Wallet"}                  
                 </button>
               </div>
             </div>
@@ -102,8 +143,9 @@ export default function Header() {
               <button
                 type="button"
                 className="bg-pink-300 rounded-xl pl-4 pr-4"
+                onClick={handleConnectWallet}
               >
-                Connect Wallet
+                {address ? address : "Connect Wallet"}
               </button>
             </div>
           </Disclosure.Panel>
