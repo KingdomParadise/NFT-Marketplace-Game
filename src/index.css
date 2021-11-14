@@ -3,10 +3,19 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'VCR OSD Mono';
-  src: local('VCR OSD Mono'), url(./assets/fonts/VCR_OSD_MONO.ttf) format('ttf');
+  font-family: "VCR OSD Mono";
+  src: url(./assets/fonts/VCR_OSD_MONO.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'VCR OSD Mono';
+  font-family: "VCR OSD Mono";
+}
+
+#root {
+  position: relative;
+  overflow: hidden;
 }
