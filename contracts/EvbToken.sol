@@ -17,7 +17,7 @@ contract EvbToken {
     address private _master_wallet;
 
     constructor() {
-        _name = "Epic Varporcrate Box";
+        _name = "Epic Vaporcrate Box";
         _symbol = "EVB";
         _price_in_bnb = 1.25 * (10**18);
         // _master_wallet = address(0xD79bdB9eB68636E1de8D448242a75aB211FB7FA8);

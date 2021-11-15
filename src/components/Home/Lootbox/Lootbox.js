@@ -293,9 +293,9 @@ const contract_abi = [
 ];
 
 const contract_address = {
-  "Basic Vaporcrate" : "0x3302D214Cba55dC5E7D034eB1741312A1DF8DAFE",
-  "Epic Vaporcrate" : "0xF9069bB927dcB6f3296Ca7BA3Fd2D4a5031D6F44",
-  "Legendary Vaporcrate" : "0xa2d1298Dd09afAA0eB8d1E5FA142aE38D88896b7",
+  "Basic Vaporcrate" : "0x15EAc8fE0a1379a578aCbF82AF2Fd38270e2BA57",
+  "Epic Vaporcrate" : "0xD740146E7445D3C1bdfA6579f966dCA278ea50cA",
+  "Legendary Vaporcrate" : "0xbCBE4A9c5bbB9Cd69F5746e5748dee91B547F209",
 };
 
 export default function Lootbox(props) {

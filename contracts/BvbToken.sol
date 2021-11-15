@@ -17,7 +17,7 @@ contract BvbToken {
     address private _master_wallet;
 
     constructor() {
-        _name = "Basic Varporcrate Box";
+        _name = "Basic Vaporcrate Box";
         _symbol = "BVB";
         _price_in_bnb = 0.45 * (10**18);
         // _master_wallet = address(0xD79bdB9eB68636E1de8D448242a75aB211FB7FA8);
