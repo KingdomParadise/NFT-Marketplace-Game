@@ -1,5 +1,10 @@
 import {useState, useEffect} from 'react'
 import Web3 from 'web3'
+import {VaporcrateModal} from "../../Home/Dialog/Dialog"
+
+import lootbox1 from "../../../assets/lootbox1.png";
+import lootbox2 from "../../../assets/lootbox2.png";
+import lootbox3 from "../../../assets/lootbox3.png";
 
 const contract_abi = [
 	{
@@ -292,11 +297,19 @@ const contract_abi = [
 	}
 ];
 
+// product mode
+// const contract_address = {
+//   "Basic Vaporcrate" : "0x15EAc8fE0a1379a578aCbF82AF2Fd38270e2BA57",
+//   "Epic Vaporcrate" : "0xD740146E7445D3C1bdfA6579f966dCA278ea50cA",
+//   "Legendary Vaporcrate" : "0xbCBE4A9c5bbB9Cd69F5746e5748dee91B547F209",
+// };
+
+// develop mode
 const contract_address = {
-  "Basic Vaporcrate" : "0x15EAc8fE0a1379a578aCbF82AF2Fd38270e2BA57",
-  "Epic Vaporcrate" : "0xD740146E7445D3C1bdfA6579f966dCA278ea50cA",
-  "Legendary Vaporcrate" : "0xbCBE4A9c5bbB9Cd69F5746e5748dee91B547F209",
-};
+	"Basic Vaporcrate" : "0x15EAc8fE0a1379a578aCbF82AF2Fd38270e2BA57",
+	"Epic Vaporcrate" : "0xD740146E7445D3C1bdfA6579f966dCA278ea50cA",
+	"Legendary Vaporcrate" : "0xbCBE4A9c5bbB9Cd69F5746e5748dee91B547F209",
+  };
 
 export default function Lootbox(props) {
   const [tokenRemain, setTokenRemain] = useState(props.count);
@@ -316,7 +329,7 @@ export default function Lootbox(props) {
     tokenContract.methods.balanceOf(contract_address[props.title]).call().then((data) => {setTokenRemain(data);});
   }, []);
 
-  function handleClick() {
+  function buyClickHandle() {
     if(!window.ethereum) {
       alert("Please install metamask!");
       return;
@@ -344,11 +357,11 @@ export default function Lootbox(props) {
   return (
     <div>
       <div className="custom-box-shadow rounded-xl pt-2 pb-5 px-2">
-        <img src={props.src} className="mx-auto p-5" />
+        <img src={props.src} className="mx-auto p-4" />
         <p className="text-white text-base">{props.title}</p>
-        <p className="text-white text-opacity-50 text-xs py-1">{props.desc}</p>
+        <p className="flex items-center justify-center text-white text-opacity-50 text-xs h-8 md:h-20 lg:h-12">{props.desc}</p>
         <p className="text-white text-base">{props.price + ' BNB'}</p>
-        <button type="button" onClick={handleClick} className="border border-white rounded-lg text-white hover:opacity-70 py-1 px-5 mt-2">Buy Now</button>
+				<VaporcrateModal src={props.src} title={props.title} desc={props.desc} count={props.count} color={props.color} buyClickHandle = {buyClickHandle} tokenRemain = {tokenRemain} />
       </div>
       <p className="text-white text-opacity-50 text-xs py-2">{tokenRemain}/{props.count} Left</p>
     </div>

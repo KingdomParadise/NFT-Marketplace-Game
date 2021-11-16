@@ -45,8 +45,8 @@ import Space1 from "../../assets/spaces/space1.png";
 export default function Home() {
   return (
     <>
-      <div className="grid justify-items-center banner-wrapper pb-8">
-        <div className="flex flex-row-reverse w-11/12 md:w-9/12 justify-items-end gap-2 my-4">
+      <div className="grid justify-items-center banner-wrapper pb-24">
+        <div className="flex flex-row-reverse w-11/12 md:w-9/12 justify-items-end gap-2 my-4 pb-16">
           <a
             href="https://t.me/vaporbit"
             className="flex items-center text-center w-8 h-8 bg-purple-400 rounded-3xl"
@@ -81,7 +81,7 @@ export default function Home() {
         </a>
       </div>
 
-      <Box title="What is Vaporblitz?" className="text-center bg-pink-800">
+      <Box title="What is Vaporblitz?" className="text-center bg-pink-800 pb-3">
         <p className="text-lg text-white text-opacity-50 w-11/12 mx-auto py-4">
           Vaporblitz is a PVP & P2E game where you fight against other players
           online for BNB or VPR. All in-game items are NFTS.
@@ -91,10 +91,10 @@ export default function Home() {
           money in the process.
         </p>
 
-        <div className="grid grid-cols-3 gap-24 w-10/12 mt-4 mx-auto">
-          <Lootbox src={lootbox1} title="Basic Vaporcrate" desc="2 Weapon Skins, 1 Hat and 1 Accessory" price="0.45" count="1000" />
-          <Lootbox src={lootbox2} title="Epic Vaporcrate" desc="5 Weapon Skins, 3 Hats and 3 Accessories" price="1.25" count="750" />
-          <Lootbox src={lootbox3} title="Legendary Vaporcrate" desc="7 Weapon Skins, 1 House, 4 Hats, 6 Accessories and 2 Game Beta Keys" price="2.25" count="250" />
+        <div className="grid md:grid-cols-3 sm:gap-8 md:gap-10 lg:gap-24 w-10/12 mt-4 mx-auto">
+          <Lootbox src={lootbox1} title="Basic Vaporcrate" desc="2 Weapon Skins, 1 Hat and 1 Accessory" price="0.45" count="1000" color="green" />
+          <Lootbox src={lootbox2} title="Epic Vaporcrate" desc="5 Weapon Skins, 3 Hats and 3 Accessories" price="1.25" count="750" color="blue" />
+          <Lootbox src={lootbox3} title="Legendary Vaporcrate" desc="7 Weapon Skins, 1 House, 4 Hats, 6 Accessories and 2 Game Beta Keys" price="2.25" count="250" color="yellow" />
         </div>
       </Box>
 
@@ -170,10 +170,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* <div>
-            <img className="h-10 w-full" src={pinkBlend} />
-          </div> */}
       </Box>
 
       <FullCarousel />

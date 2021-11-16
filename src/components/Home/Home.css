@@ -95,7 +95,33 @@
   font-size: 1.7rem;
 }
 
+.blur-back::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 45px;
+  height: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 50%;
+}
 
+.blur-back.green::before {
+  background: #72DC62;
+  box-shadow: 0px 0px 45px 55px #72dc62;
+}
+
+.blur-back.blue::before {
+  background: #45F2FF;
+  box-shadow: 0px 0px 45px 55px #45F2FF;
+}
+
+.blur-back.yellow::before {
+  background: #FFF771;
+  box-shadow: 0px 0px 45px 55px #FFF771;
+}
 
 @media screen and (min-width: 1536px) {
   .smalltext {
