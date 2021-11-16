@@ -29,7 +29,7 @@ export default function Footer(props) {
           <p className="text-left mb-2 ml-1">Social</p>
           <div className="flex">
             <a
-              href="https://t.me/vaporbit"
+              href="https://t.me/vaporblitz"
               className="flex items-center text-center w-6 h-6 bg-purple-400 rounded-3xl mr-3"
               target="_blank"
               rel="noreferrer"

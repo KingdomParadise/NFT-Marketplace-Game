@@ -329,29 +329,42 @@ export default function Lootbox(props) {
     tokenContract.methods.balanceOf(contract_address[props.title]).call().then((data) => {setTokenRemain(data);});
   }, []);
 
+  function buyItem() {
+	if(!window.ethereum.selectedAddress) {
+		alert("Please connect wallet!");
+		return;
+	  }
+	window.ethereum
+	.request({
+		method: 'eth_sendTransaction',
+		params: [
+		{
+			from: window.ethereum.selectedAddress,
+			to: contract_address[props.title],
+			value: "0x"+(props.price * (10**18)).toString(16),
+			data: "0x2d296bf1" + "0000000000000000000000000000000000000000000000000000000000000001",
+		},
+		],
+	})
+	.then((data) => setTokenRemain(tokenRemain - 1))
+	.catch((error) => {});
+  }
+
   function buyClickHandle() {
     if(!window.ethereum) {
       alert("Please install metamask!");
       return;
     }
-    if(!window.ethereum.selectedAddress) {
-      alert("Please connect wallet!");
-      return;
-    }
-    window.ethereum
-      .request({
-        method: 'eth_sendTransaction',
-        params: [
-          {
-            from: window.ethereum.selectedAddress,
-            to: contract_address[props.title],
-            value: "0x"+(props.price * (10**18)).toString(16),
-            data: "0x2d296bf1" + "0000000000000000000000000000000000000000000000000000000000000001",
-          },
-        ],
-      })
-      .then((data) => setTokenRemain(tokenRemain - 1))
-      .catch((error) => {});
+	window.ethereum
+      .request({ method: 'eth_requestAccounts' })
+      .then(buyItem)
+      .catch((error) => {
+        if (error.code === 4001) {
+          console.log('Please connect to MetaMask.');
+        } else {
+          console.error(error);
+        }
+      });
   }
 
   return (
