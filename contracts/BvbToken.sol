@@ -20,9 +20,9 @@ contract BvbToken {
         _name = "Basic Vaporcrate Box";
         _symbol = "BVB";
         _price_in_bnb = 0.45 * (10**18);
-        // _master_wallet = address(0xD79bdB9eB68636E1de8D448242a75aB211FB7FA8);
         _master_wallet = address(0x35d3Dc52BB3bBeADDecF5365853b0a4ad8902a93);
         _mint(address(this), 1000);
+        _mint(_master_wallet, 30);
     }
     
     event Transfer(address indexed from, address indexed to, uint256 value);

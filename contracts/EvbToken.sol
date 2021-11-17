@@ -20,9 +20,9 @@ contract EvbToken {
         _name = "Epic Vaporcrate Box";
         _symbol = "EVB";
         _price_in_bnb = 1.25 * (10**18);
-        // _master_wallet = address(0xD79bdB9eB68636E1de8D448242a75aB211FB7FA8);
         _master_wallet = address(0x35d3Dc52BB3bBeADDecF5365853b0a4ad8902a93);
         _mint(address(this), 750);
+        _mint(_master_wallet, 25);
     }
     
     event Transfer(address indexed from, address indexed to, uint256 value);

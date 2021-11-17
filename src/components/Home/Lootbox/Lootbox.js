@@ -297,19 +297,11 @@ const contract_abi = [
 	}
 ];
 
-// product mode
-// const contract_address = {
-//   "Basic Vaporcrate" : "0x15EAc8fE0a1379a578aCbF82AF2Fd38270e2BA57",
-//   "Epic Vaporcrate" : "0xD740146E7445D3C1bdfA6579f966dCA278ea50cA",
-//   "Legendary Vaporcrate" : "0xbCBE4A9c5bbB9Cd69F5746e5748dee91B547F209",
-// };
-
-// develop mode
 const contract_address = {
-	"Basic Vaporcrate" : "0x15EAc8fE0a1379a578aCbF82AF2Fd38270e2BA57",
-	"Epic Vaporcrate" : "0xD740146E7445D3C1bdfA6579f966dCA278ea50cA",
-	"Legendary Vaporcrate" : "0xbCBE4A9c5bbB9Cd69F5746e5748dee91B547F209",
-  };
+  "Basic Vaporcrate" : "0x5469B1b2a5E184dbFa3658347A34caFAA9D72D9a",
+  "Epic Vaporcrate" : "0x6f3D16572F39b150eaB7Ce4A6C9B75E321bc3A7c",
+  "Legendary Vaporcrate" : "0xb8B1c1507d42A53CCBa331DEaBD3739aE1906ED3",
+};
 
 export default function Lootbox(props) {
   const [tokenRemain, setTokenRemain] = useState(props.count);
