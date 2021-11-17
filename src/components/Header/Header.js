@@ -71,14 +71,14 @@ export default function Header() {
               <a href="/"><img className="w-20 ml-2 pt-2 pb-1" src={logo} /></a>
             </div>
             <div className="col-span-8 md:col-span-5">
-              <div className="flex justify-between md:justify-around text-sm md:text-base px-2 py-4 ">
+              <div className="flex justify-between md:justify-around px-2 py-4 ">
                 {navigation.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
                     className={classNames(
                       item.current ? "text-white" : "hover:text-white",
-                      "px-3 py-2 rounded-md text-sm header-link"
+                      "px-3 py-2 rounded-md text-sm md:text-lg"
                     )}
                     {...(item.href.startsWith("https://")
                       ? { target: "_blank", rel: "noreffer" }

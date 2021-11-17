@@ -215,7 +215,7 @@ export default function Home() {
       </Box>
 
       <Box title="" className="relative space-dress">
-        <div className="relative mt-2 mx-2 md:mx-8 h-16 md:h-auto">
+        <div className="relative mt-2 mx-2 md:mx-8 h-16 md:h-auto -mt-2 sm:mt-0">
           <img src={textbox} className="mx-auto h-full" />
           <p className="absolute transform -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2 text-sm sm:text-base md:text-2xl lg:text-3xl text-white nft-text">
             Customize your Character with NFT Items

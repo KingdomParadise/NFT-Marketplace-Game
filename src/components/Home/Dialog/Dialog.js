@@ -270,7 +270,6 @@ export function VaporcrateModal(props) {
               <Dialog.Overlay className="fixed inset-0" />
             </Transition.Child>
 
-            {/* This element is to trick the browser into centering the modal contents. */}
             <span
               className="inline-block h-screen align-middle"
               aria-hidden="true"
@@ -294,7 +293,7 @@ export function VaporcrateModal(props) {
                 <p className="flex items-center justify-center text-white text-opacity-50 text-xs h-8 md:h-20 lg:h-12">{props.desc}</p>
                 <button type="button" onClick={props.buyClickHandle} className="border border-white rounded-lg text-white hover:opacity-70 py-1 px-5 mt-2">Buy Now</button>
                 <p className="text-white text-xs pt-2 pb-1">{props.tokenRemain}/{props.count} Left</p>
-                <a href="https://vaporblitz.gitbook.io/whitepaper/information/marketplace" className="text-white text-opacity-50 text-xs underline">More Information about Vaporcrates</a>
+                <a href="https://vaporblitz.gitbook.io/whitepaper/information/marketplace" target="_blank" className="text-white text-opacity-50 text-xs underline">More Information about Vaporcrates</a>
               </div>
             </Transition.Child>
           </div>
