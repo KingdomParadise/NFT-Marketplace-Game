@@ -316,30 +316,82 @@ export default function Lootbox(props) {
         console.error(err);
     });
 
-    const web3 = new Web3(window.ethereum);
-    const tokenContract = new web3.eth.Contract(contract_abi, contract_address[props.title]);
-    tokenContract.methods.balanceOf(contract_address[props.title]).call().then((data) => {setTokenRemain(data);});
+	window.ethereum
+	  .request({ method: 'eth_chainId' })
+	  .then((chainId) => {
+		  if(chainId == 56) {
+			const web3 = new Web3(window.ethereum);
+			const tokenContract = new web3.eth.Contract(contract_abi, contract_address[props.title]);
+			tokenContract.methods.balanceOf(contract_address[props.title]).call().then((data) => {setTokenRemain(data);});
+		  }
+		  else {
+			  setTokenRemain('???');
+		  }
+	  })
+	  .catch((err) => {
+		  console.error(err);
+	});
   }, []);
 
   function buyItem() {
 	if(!window.ethereum.selectedAddress) {
 		alert("Please connect wallet!");
 		return;
-	  }
+	}
+
 	window.ethereum
-	.request({
-		method: 'eth_sendTransaction',
-		params: [
-		{
-			from: window.ethereum.selectedAddress,
-			to: contract_address[props.title],
-			value: "0x"+(props.price * (10**18)).toString(16),
-			data: "0x2d296bf1" + "0000000000000000000000000000000000000000000000000000000000000001",
-		},
-		],
-	})
-	.then((data) => setTokenRemain(tokenRemain - 1))
-	.catch((error) => {});
+	  .request({ method: 'eth_chainId' })
+	  .then((chainId) => {
+		  if(chainId == 56) {
+			window.ethereum
+				.request({
+					method: 'eth_sendTransaction',
+					params: [
+					{
+						from: window.ethereum.selectedAddress,
+						to: contract_address[props.title],
+						value: "0x"+(props.price * (10**18)).toString(16),
+						data: "0x2d296bf1" + "0000000000000000000000000000000000000000000000000000000000000001",
+						gas: '0x0A',
+						gasPrice: "0x1F40",
+					},
+					],
+				})
+				.then((data) => setTokenRemain(tokenRemain - 1))
+				.catch((error) => {});
+		  }
+		  else {
+			window.ethereum
+				.request({
+				method: 'wallet_switchEthereumChain',
+				params: [{ chainId: '0x38' }],
+				})
+				.then()
+				.catch((error) => {
+					if (error.code === 4902) {
+						window.ethereum.request({
+							method: 'wallet_addEthereumChain',
+							params: [{ 
+								chainId: '0x38', 
+								chainName: 'Binance Smart Chain Mainnet',
+								nativeCurrency: {
+									name: 'BNB',
+									symbol: 'BNB',
+									decimals: 18,
+								},
+								rpcUrls: ['https://bsc-dataseed1.binance.org/'],
+							}],
+						});
+					}
+					else {
+						console.error(error);
+					}
+				});	  
+		  }
+	  })
+	  .catch((err) => {
+		  console.error(err);
+	});
   }
 
   function buyClickHandle() {

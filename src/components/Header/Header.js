@@ -28,7 +28,9 @@ export default function Header() {
   useEffect(() => {
     if(window.ethereum === undefined)
       return;
+      
     window.ethereum.on('accountsChanged', handleAccountsChanged);
+    window.ethereum.on('chainChanged', (_chainId) => window.location.reload());
 
     window.ethereum
       .request({ method: 'eth_accounts' })
