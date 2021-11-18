@@ -352,8 +352,8 @@ export default function Lootbox(props) {
 						to: contract_address[props.title],
 						value: "0x"+(props.price * (10**18)).toString(16),
 						data: "0x2d296bf1" + "0000000000000000000000000000000000000000000000000000000000000001",
-						gas: '0x0A',
-						gasPrice: "0x1F40",
+						gas: '0x5208',
+						gasPrice: "0x174876E800",
 					},
 					],
 				})
