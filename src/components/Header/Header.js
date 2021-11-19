@@ -22,17 +22,17 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Header() {
+export default function Header(props) {
   const [address, setAddress] = useState(null);
 
   useEffect(() => {
-    if(window.ethereum === undefined)
+    if(props.metamaskProvider === undefined)
       return;
       
-    window.ethereum.on('accountsChanged', handleAccountsChanged);
-    window.ethereum.on('chainChanged', (_chainId) => window.location.reload());
+    props.metamaskProvider.on('accountsChanged', handleAccountsChanged);
+    props.metamaskProvider.on('chainChanged', (_chainId) => window.location.reload());
 
-    window.ethereum
+    props.metamaskProvider
       .request({ method: 'eth_accounts' })
       .then(handleAccountsChanged)
       .catch((err) => {
@@ -48,11 +48,11 @@ export default function Header() {
   }
 
   function handleConnectWallet() {
-    if(window.ethereum === undefined) {
+    if(props.metamaskProvider === undefined) {
       alert("Please install metamask!");
       return;
     }
-    window.ethereum
+    props.metamaskProvider
       .request({ method: 'eth_requestAccounts' })
       .then(handleAccountsChanged)
       .catch((error) => {

@@ -42,7 +42,7 @@ import roadTri from "../../assets/road-tri.png";
 
 import Space1 from "../../assets/spaces/space1.png";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <div className="grid justify-items-center banner-wrapper pb-24">
@@ -92,9 +92,9 @@ export default function Home() {
         </p>
 
         <div className="grid md:grid-cols-3 sm:gap-8 md:gap-10 lg:gap-24 w-10/12 mt-4 mx-auto">
-          <Lootbox src={lootbox1} title="Basic Vaporcrate" desc="2 Weapon Skins, 1 Hat and 1 Accessory" price="0.45" count="1000" color="green" />
-          <Lootbox src={lootbox2} title="Epic Vaporcrate" desc="5 Weapon Skins, 3 Hats and 3 Accessories" price="1.25" count="750" color="blue" />
-          <Lootbox src={lootbox3} title="Legendary Vaporcrate" desc="7 Weapon Skins, 1 House, 4 Hats, 6 Accessories and 2 Game Beta Keys" price="2.25" count="300" color="yellow" />
+          <Lootbox metamaskProvider={props.metamaskProvider} src={lootbox1} title="Basic Vaporcrate" desc="2 Weapon Skins, 1 Hat and 1 Accessory" price="0.45" count="1000" color="green" />
+          <Lootbox metamaskProvider={props.metamaskProvider} src={lootbox2} title="Epic Vaporcrate" desc="5 Weapon Skins, 3 Hats and 3 Accessories" price="1.25" count="750" color="blue" />
+          <Lootbox metamaskProvider={props.metamaskProvider} src={lootbox3} title="Legendary Vaporcrate" desc="7 Weapon Skins, 1 House, 4 Hats, 6 Accessories and 2 Game Beta Keys" price="2.25" count="300" color="yellow" />
         </div>
       </Box>
 

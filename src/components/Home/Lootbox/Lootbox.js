@@ -2,10 +2,6 @@ import {useState, useEffect} from 'react'
 import Web3 from 'web3'
 import {VaporcrateModal} from "../../Home/Dialog/Dialog"
 
-import lootbox1 from "../../../assets/lootbox1.png";
-import lootbox2 from "../../../assets/lootbox2.png";
-import lootbox3 from "../../../assets/lootbox3.png";
-
 const contract_abi = [
 	{
 		"inputs": [],
@@ -307,20 +303,20 @@ export default function Lootbox(props) {
   const [tokenRemain, setTokenRemain] = useState(props.count);
 
   useEffect(() => {
-    if(window.ethereum === undefined)
+    if(props.metamaskProvider === undefined)
       return;
-    window.ethereum
+    props.metamaskProvider
       .request({ method: 'eth_accounts' })
       .then()
       .catch((err) => {
         console.error(err);
     });
 
-	window.ethereum
+	props.metamaskProvider
 	  .request({ method: 'eth_chainId' })
 	  .then((chainId) => {
 		  if(chainId == 56) {
-			const web3 = new Web3(window.ethereum);
+			const web3 = new Web3(props.metamaskProvider);
 			const tokenContract = new web3.eth.Contract(contract_abi, contract_address[props.title]);
 			tokenContract.methods.balanceOf(contract_address[props.title]).call().then((data) => {setTokenRemain(data);});
 		  }
@@ -334,21 +330,21 @@ export default function Lootbox(props) {
   }, []);
 
   function buyItem() {
-	if(!window.ethereum.selectedAddress) {
+	if(!props.metamaskProvider.selectedAddress) {
 		alert("Please connect wallet!");
 		return;
 	}
 
-	window.ethereum
+	props.metamaskProvider
 	  .request({ method: 'eth_chainId' })
 	  .then((chainId) => {
 		  if(chainId == 56) {
-			window.ethereum
+			props.metamaskProvider
 				.request({
 					method: 'eth_sendTransaction',
 					params: [
 					{
-						from: window.ethereum.selectedAddress,
+						from: props.metamaskProvider.selectedAddress,
 						to: contract_address[props.title],
 						value: "0x"+(props.price * (10**18)).toString(16),
 						data: "0x2d296bf1" + "0000000000000000000000000000000000000000000000000000000000000001",
@@ -361,7 +357,7 @@ export default function Lootbox(props) {
 				.catch((error) => {});
 		  }
 		  else {
-			window.ethereum
+			props.metamaskProvider
 				.request({
 				method: 'wallet_switchEthereumChain',
 				params: [{ chainId: '0x38' }],
@@ -369,7 +365,7 @@ export default function Lootbox(props) {
 				.then()
 				.catch((error) => {
 					if (error.code === 4902) {
-						window.ethereum.request({
+						props.metamaskProvider.request({
 							method: 'wallet_addEthereumChain',
 							params: [{ 
 								chainId: '0x38', 
@@ -395,11 +391,11 @@ export default function Lootbox(props) {
   }
 
   function buyClickHandle() {
-    if(!window.ethereum) {
+    if(!props.metamaskProvider) {
       alert("Please install metamask!");
       return;
     }
-	window.ethereum
+	props.metamaskProvider
       .request({ method: 'eth_requestAccounts' })
       .then(buyItem)
       .catch((error) => {
