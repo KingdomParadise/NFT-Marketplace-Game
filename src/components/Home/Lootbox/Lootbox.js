@@ -303,7 +303,7 @@ export default function Lootbox(props) {
   const [tokenRemain, setTokenRemain] = useState(props.count);
 
   useEffect(() => {
-    if(props.metamaskProvider === undefined)
+    if(!props.metamaskProvider)
       return;
     props.metamaskProvider
       .request({ method: 'eth_accounts' })

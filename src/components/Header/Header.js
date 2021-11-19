@@ -26,7 +26,7 @@ export default function Header(props) {
   const [address, setAddress] = useState(null);
 
   useEffect(() => {
-    if(props.metamaskProvider === undefined)
+    if(!props.metamaskProvider)
       return;
       
     props.metamaskProvider.on('accountsChanged', handleAccountsChanged);
@@ -48,7 +48,7 @@ export default function Header(props) {
   }
 
   function handleConnectWallet() {
-    if(props.metamaskProvider === undefined) {
+    if(!props.metamaskProvider) {
       alert("Please install metamask!");
       return;
     }
