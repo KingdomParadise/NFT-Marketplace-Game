@@ -78,7 +78,7 @@ export function SetupWalletModal() {
                         window.open("https://trustwallet.com/", "_blank")
                       }
                     >
-                      <img src={trust} />
+                      <img alt="" src={trust} />
                     </button>
                     <button
                       type="button"
@@ -87,7 +87,7 @@ export function SetupWalletModal() {
                         window.open("https://metamask.io/", "_blank")
                       }
                     >
-                      <img src={metaMask} />
+                      <img alt="" src={metaMask} />
                     </button>
                   </div>
 
@@ -249,7 +249,13 @@ export function VaporcrateModal(props) {
 
   return (
     <>
-      <button type="button" onClick={openModal} className="border border-white rounded-lg text-white hover:opacity-70 py-1 px-5 mt-2">Buy Now</button>
+      <button
+        type="button"
+        onClick={openModal}
+        className="border border-white rounded-lg text-white hover:opacity-70 py-1 px-5 mt-2"
+      >
+        Buy Now
+      </button>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
@@ -287,13 +293,30 @@ export function VaporcrateModal(props) {
             >
               <div className="inline-block w-full max-w-sm pt-14 pb-6 px-10 text-white align-middle transition-all transform bg-pink-800 rounded-2xl modal-wrapper">
                 <div className={`relative blur-back ${props.color}`}>
-                  <img src={props.src} className="mx-auto" />
+                  <img alt="" src={props.src} className="mx-auto" />
                 </div>
                 <p className="text-white pt-10">{props.title}</p>
-                <p className="flex items-center justify-center text-white text-opacity-50 text-xs h-8 md:h-20 lg:h-12">{props.desc}</p>
-                <button type="button" onClick={props.buyClickHandle} className="border border-white rounded-lg text-white hover:opacity-70 py-1 px-5 mt-2">Buy Now</button>
-                <p className="text-white text-xs pt-2 pb-1">{props.tokenRemain}/{props.count} Left</p>
-                <a href="https://vaporblitz.gitbook.io/whitepaper/information/marketplace" target="_blank" className="text-white text-opacity-50 text-xs underline">More Information about Vaporcrates</a>
+                <p className="flex items-center justify-center text-white text-opacity-50 text-xs h-8 md:h-20 lg:h-12">
+                  {props.desc}
+                </p>
+                <button
+                  type="button"
+                  onClick={props.buyClickHandle}
+                  className="border border-white rounded-lg text-white hover:opacity-70 py-1 px-5 mt-2"
+                >
+                  Buy Now
+                </button>
+                <p className="text-white text-xs pt-2 pb-1">
+                  {props.tokenRemain}/{props.count} Left
+                </p>
+                <a
+                  href="https://vaporblitz.gitbook.io/whitepaper/information/marketplace"
+                  target="_blank"
+                  className="text-white text-opacity-50 text-xs underline"
+                  rel="noreferrer"
+                >
+                  More Information about Vaporcrates
+                </a>
               </div>
             </Transition.Child>
           </div>

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Slider from "react-slick";
 import firstCarousel from "../../../assets/carousel1.png";
 import firCeo from "../../../assets/ceo-1.png";
@@ -116,7 +117,7 @@ export function FullCarousel() {
     infinite: true,
     speed: 500,
     fade: true,
-    cssEase: 'linear',
+    cssEase: "linear",
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: false,
@@ -131,7 +132,7 @@ export function FullCarousel() {
       {backgrounds.map((bg, index) => (
         <img key={index} src={bg} alt="" className="w-full" />
       ))}
-    </Slider>      
+    </Slider>
   );
 }
 
@@ -351,64 +352,96 @@ export function NFTCarousel(props) {
         <div className="">
           <Slider {...settings}>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:py-18" style={purpleWrap}>
+              <div
+                className="py-9 lg:py-12 xl:py-16 2xl:py-18"
+                style={purpleWrap}
+              >
                 <img
                   src={wp1}
                   className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto"
+                  alt=""
                 />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:py-18" style={purpleWrap}>
+              <div
+                className="py-9 lg:py-12 xl:py-16 2xl:py-18"
+                style={purpleWrap}
+              >
                 <img
+                  alt=""
                   src={wp2}
                   className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto"
                 />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:py-18" style={purpleWrap}>
+              <div
+                className="py-9 lg:py-12 xl:py-16 2xl:py-18"
+                style={purpleWrap}
+              >
                 <img
+                  alt=""
                   src={wp3}
                   className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto"
                 />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:py-18" style={purpleWrap}>
+              <div
+                className="py-9 lg:py-12 xl:py-16 2xl:py-18"
+                style={purpleWrap}
+              >
                 <img
+                  alt=""
                   src={wp4}
                   className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto"
                 />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:py-18" style={purpleWrap}>
+              <div
+                className="py-9 lg:py-12 xl:py-16 2xl:py-18"
+                style={purpleWrap}
+              >
                 <img
+                  alt=""
                   src={wp5}
                   className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto"
                 />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:py-18" style={purpleWrap}>
+              <div
+                className="py-9 lg:py-12 xl:py-16 2xl:py-18"
+                style={purpleWrap}
+              >
                 <img
+                  alt=""
                   src={wp9}
                   className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto"
                 />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:py-18" style={purpleWrap}>
+              <div
+                className="py-9 lg:py-12 xl:py-16 2xl:py-18"
+                style={purpleWrap}
+              >
                 <img
+                  alt=""
                   src={wp10}
                   className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto"
                 />
               </div>
             </div>
             <div className="relative flex justify-center items-center px-2 md:px-4">
-              <div className="py-9 lg:py-12 xl:py-16 2xl:py-18" style={purpleWrap}>
+              <div
+                className="py-9 lg:py-12 xl:py-16 2xl:py-18"
+                style={purpleWrap}
+              >
                 <img
+                  alt=""
                   src={wp11}
                   className="h-7 sm:h-9 lg:h-10 xl:h-12 2xl:h-14 mx-auto"
                 />
@@ -425,6 +458,7 @@ export function NFTCarousel(props) {
                 style={blueWrap}
               >
                 <img
+                  alt=""
                   src={hat1}
                   className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto"
                 />
@@ -436,6 +470,7 @@ export function NFTCarousel(props) {
                 style={blueWrap}
               >
                 <img
+                  alt=""
                   src={hat2}
                   className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto"
                 />
@@ -447,6 +482,7 @@ export function NFTCarousel(props) {
                 style={blueWrap}
               >
                 <img
+                  alt=""
                   src={hat3}
                   className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto"
                 />
@@ -458,6 +494,7 @@ export function NFTCarousel(props) {
                 style={blueWrap}
               >
                 <img
+                  alt=""
                   src={hat4}
                   className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto"
                 />
@@ -469,6 +506,7 @@ export function NFTCarousel(props) {
                 style={blueWrap}
               >
                 <img
+                  alt=""
                   src={hat5}
                   className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto"
                 />
@@ -480,6 +518,7 @@ export function NFTCarousel(props) {
                 style={blueWrap}
               >
                 <img
+                  alt=""
                   src={hat6}
                   className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto"
                 />
@@ -491,6 +530,7 @@ export function NFTCarousel(props) {
                 style={blueWrap}
               >
                 <img
+                  alt=""
                   src={hat7}
                   className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto"
                 />
@@ -502,6 +542,7 @@ export function NFTCarousel(props) {
                 style={blueWrap}
               >
                 <img
+                  alt=""
                   src={hat8}
                   className="h-9 sm:h-12 lg:h-16 xl:h-18 2xl:h-20 mx-auto"
                 />
