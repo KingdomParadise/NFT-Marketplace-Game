@@ -23,7 +23,7 @@ export default function Footer(props) {
           </div>
         </div>
         <div className="items-center">
-          <img className="w-4/5 mx-auto" src={props.logo} />
+          <img alt="" className="w-4/5 mx-auto" src={props.logo} />
         </div>
         <div>
           <p className="text-left mb-2 ml-1">Social</p>
@@ -34,7 +34,7 @@ export default function Footer(props) {
               target="_blank"
               rel="noreferrer"
             >
-              <img className="p-1.5" src={props.telegram} />
+              <img alt="" className="p-1.5" src={props.telegram} />
             </a>
             <a
               href="https://discord.gg/fbf86kJn7H"
@@ -42,7 +42,7 @@ export default function Footer(props) {
               target="_blank"
               rel="noreferrer"
             >
-              <img className="p-1.5" src={props.discord} />
+              <img alt="" className="p-1.5" src={props.discord} />
             </a>
           </div>
         </div>

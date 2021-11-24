@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import "./Home.css";
 import {
   FullCarousel,
@@ -53,7 +54,7 @@ export default function Home(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="p-1.5" src={telegram} />
+            <img alt="" className="p-1.5" src={telegram} />
           </a>
           <a
             href="https://discord.gg/fbf86kJn7H"
@@ -61,10 +62,10 @@ export default function Home(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="p-1.5" src={discord} />
+            <img alt="" className="p-1.5" src={discord} />
           </a>
         </div>
-        <img className="w-4/12 logo" src={bannerLogo} />
+        <img alt="" className="w-4/12 logo" src={bannerLogo} />
         <a
           className="bg-pink-300 hover:bg-pink-500 w-32 p-2 rounded-lg text-white mb-3 text-shadow custom-box-shadow hover:brightness-50"
           href="https://pancakeswap.finance/swap?outputCurrency=0x73f5a4808456f4927ee13cbe76b2b726136ce962"
@@ -92,9 +93,33 @@ export default function Home(props) {
         </p>
 
         <div className="grid md:grid-cols-3 sm:gap-8 md:gap-10 lg:gap-24 w-10/12 mt-4 mx-auto">
-          <Lootbox metamaskProvider={props.metamaskProvider} src={lootbox1} title="Basic Vaporcrate" desc="2 Weapon Skins, 1 Hat and 1 Accessory" price="0.45" count="1000" color="green" />
-          <Lootbox metamaskProvider={props.metamaskProvider} src={lootbox2} title="Epic Vaporcrate" desc="5 Weapon Skins, 3 Hats and 3 Accessories" price="1.25" count="750" color="blue" />
-          <Lootbox metamaskProvider={props.metamaskProvider} src={lootbox3} title="Legendary Vaporcrate" desc="7 Weapon Skins, 1 House, 4 Hats, 6 Accessories and 2 Game Beta Keys" price="2.25" count="300" color="yellow" />
+          <Lootbox
+            metamaskProvider={props.metamaskProvider}
+            src={lootbox1}
+            title="Basic Vaporcrate"
+            desc="2 Weapon Skins, 1 Hat and 1 Accessory"
+            price="0.45"
+            count="1000"
+            color="green"
+          />
+          <Lootbox
+            metamaskProvider={props.metamaskProvider}
+            src={lootbox2}
+            title="Epic Vaporcrate"
+            desc="5 Weapon Skins, 3 Hats and 3 Accessories"
+            price="1.25"
+            count="750"
+            color="blue"
+          />
+          <Lootbox
+            metamaskProvider={props.metamaskProvider}
+            src={lootbox3}
+            title="Legendary Vaporcrate"
+            desc="7 Weapon Skins, 1 House, 4 Hats, 6 Accessories and 2 Game Beta Keys"
+            price="2.25"
+            count="300"
+            color="yellow"
+          />
         </div>
       </Box>
 
@@ -128,8 +153,8 @@ export default function Home(props) {
           <div className="grid md:grid-cols-3 gap-5 md:gap-12 lg:gap-14 xl:gap-20">
             <div className="w-3/5 md:w-full mx-auto">
               <div className="flex justify-center items-center relative">
-                <img src={blueBoxLg} className="w-full" />
-                <img src={iceGundle} className="absolute h-3/5 mb-10" />
+                <img alt="" src={blueBoxLg} className="w-full" />
+                <img alt="" src={iceGundle} className="absolute h-3/5 mb-10" />
                 <p className="absolute bottom-1/7 text-lg sm:text-xl md:text-2xl text-white">
                   Fun Weapons
                 </p>
@@ -141,11 +166,11 @@ export default function Home(props) {
 
             <div className="w-3/5 md:w-full mx-auto">
               <div className="flex justify-center items-center relative">
-                <img src={yellowBoxLg} className="w-full" />
+                <img alt="" src={yellowBoxLg} className="w-full" />
                 <div className="flex items-center justify-center absolute h-full">
-                  <img src={flashBang} className="h-3/6 mb-6" />
-                  <img src={grenade} className="h-3/6 mb-6" />
-                  <img src={emp} className="h-3/6 mb-6" />
+                  <img alt="" src={flashBang} className="h-3/6 mb-6" />
+                  <img alt="" src={grenade} className="h-3/6 mb-6" />
+                  <img alt="" src={emp} className="h-3/6 mb-6" />
                 </div>
                 <p className="absolute bottom-1/7 text-lg sm:text-xl md:text-2xl text-white">
                   Equipment
@@ -158,8 +183,8 @@ export default function Home(props) {
 
             <div className="w-3/5 md:w-full mx-auto">
               <div className="flex justify-center items-center relative">
-                <img src={purpleBoxLg} className="w-full" />
-                <img src={vaporcrate} className="absolute h-3/5 mb-10" />
+                <img alt="" src={purpleBoxLg} className="w-full" />
+                <img alt="" src={vaporcrate} className="absolute h-3/5 mb-10" />
                 <p className="absolute bottom-1/7 text-lg sm:text-xl md:text-2xl text-white">
                   Airdrops
                 </p>
@@ -182,7 +207,11 @@ export default function Home(props) {
       >
         <div className="grid md:grid-cols-3 crypto-bosses">
           <div className="inner-box">
-            <img className="p-6 md:p-4 mx-auto tv-boss" src={signalSlicer} />
+            <img
+              alt=""
+              className="p-6 md:p-4 mx-auto tv-boss"
+              src={signalSlicer}
+            />
             <div className="flex items-center text-center h-24 md:h-40 mb-5 md:mb-0 ">
               <p className="text-white text-opacity-50 text-xl w-3/5 mx-auto">
                 <span className="text-red">Signal Slicer</span> launches deadly
@@ -191,7 +220,7 @@ export default function Home(props) {
             </div>
           </div>
           <div className="inner-box">
-            <img className="pt-6 md:p-4 mx-auto" src={robsquid} />
+            <img alt="" className="pt-6 md:p-4 mx-auto" src={robsquid} />
             <div className="flex items-center text-center mx-auto h-24 md:h-40 mb-5 md:mb-0 ">
               <p className="text-white text-opacity-50 text-xl w-3/5 mx-auto">
                 <span className="text-yellow">Robosquid</span> launches fruit
@@ -201,6 +230,7 @@ export default function Home(props) {
           </div>
           <div className="inner-box">
             <img
+              alt=""
               className="pt-6 pb-2 md:p-4 mx-auto dead-dice"
               src={deadDice}
             />
@@ -216,13 +246,14 @@ export default function Home(props) {
 
       <Box title="" className="relative space-dress">
         <div className="relative mt-2 mx-2 md:mx-8 h-16 md:h-auto -mt-2 sm:mt-0">
-          <img src={textbox} className="mx-auto h-full" />
+          <img alt="" src={textbox} className="mx-auto h-full" />
           <p className="absolute transform -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2 text-sm sm:text-base md:text-2xl lg:text-3xl text-white nft-text">
             Customize your Character with NFT Items
           </p>
         </div>
         <img
-          className="charact-img absolute transform -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2"
+          alt=""
+          className="charact-img  absolute transform -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2"
           src={baseModel}
         />
       </Box>
@@ -233,7 +264,7 @@ export default function Home(props) {
         className="px-4 bg-pink-800"
       >
         <div className="md:w-4/6 xl:w-7/12 mx-auto">
-          <img className="py-14 w-full" src={walletBlue} />
+          <img alt="" className="py-14 w-full" src={walletBlue} />
         </div>
       </Box>
 
@@ -242,10 +273,11 @@ export default function Home(props) {
         sub="Our plans for the future"
         className="bg-purple-700"
       >
-        <img className="h-3 w-full mt-6 px-3 md:px-6" src={roadBar} />
+        <img alt="" className="h-3 w-full mt-6 px-3 md:px-6" src={roadBar} />
         <div className="grid grid-cols-3 gap-10">
           {[1, 2, 3].map((i) => (
             <img
+              alt=""
               key={i}
               className="relative z-10 mx-auto w-6 road-tri"
               src={roadTri}

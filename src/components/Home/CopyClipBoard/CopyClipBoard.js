@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, Fragment } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Popover, Transition } from "@headlessui/react";
@@ -7,8 +8,7 @@ export default function CopyClipBoard() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-    }, 1000);
+    const timer = setTimeout(() => {}, 1000);
     return () => clearTimeout(timer);
   });
 
@@ -46,7 +46,7 @@ export default function CopyClipBoard() {
                   <p className="text-white copy-text-asd">
                     <>0x73f5a4808456f4927ee13cbe76b2b726136ce962</>
                   </p>
-                  <img className="w-6 copy-image" src={clipCopy} />
+                  <img className="w-6 copy-image" src={clipCopy} alt="" />
                 </div>
               </CopyToClipboard>
             </Popover.Button>
