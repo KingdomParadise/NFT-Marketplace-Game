@@ -18,7 +18,7 @@ function App(props) {
           />
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/account" element={<Inventory />} />
+          <Route path="/inventory" element={<Inventory />} />
         </Routes>
       </BrowserRouter>
     </div>

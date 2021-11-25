@@ -2,6 +2,7 @@
   max-width: 1140px;
   width: 100%;
   margin: auto;
+  padding: 0 16px;
 }
 
 .mythical,
@@ -102,8 +103,18 @@
   background-image: url(../../assets/uncommon.png);
   background-position: center center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
-
+@media (max-width: 640px) {
+  .gun-bg {
+    background-size: contain;
+  }
+}
+@media (max-width: 580px) {
+  .gun-bg {
+    background-size: cover;
+  }
+}
 .mythical-b .gun-bg {
   background-image: url(../../assets/mythical.png);
 }
@@ -121,4 +132,16 @@
 }
 .uncommon-b .gun-bg {
   background-image: url(../../assets/uncommon.png);
+}
+
+.MuiButtonBase-root.MuiPaginationItem-root {
+  color: white;
+  font-family: "VCR OSD Mono";
+}
+.MuiButtonBase-root.MuiPaginationItem-root.Mui-selected {
+  background-color: #3c4c6d;
+}
+
+.MuiPagination-root .MuiPaginationItem-root {
+  color: white;
 }
