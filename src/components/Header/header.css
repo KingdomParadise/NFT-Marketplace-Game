@@ -2,6 +2,7 @@
   max-width: 600px;
   width: 100%;
   transform: translate(-50%, -50%);
+  z-index: 9999;
 }
 .meta-logo {
   margin: 50px 0;

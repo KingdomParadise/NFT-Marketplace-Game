@@ -1,3 +1,4 @@
+import ItemCheck from "./ItemCheck";
 const typeList = [
   { name: "Skins", status: "true" },
   { name: "Properties", status: "false" },
@@ -19,17 +20,26 @@ const rarityList = [
 export default function ItemList(props) {
   return (
     <div>
-      <p className="text-white text-opacity-50 border-gray border-b pb-1 mb-3">{props.title}</p>
-      {
-        props.item === 'type' ? (
-          <>
-            
-          </>
-        ) : (
-          <>
-          </>
-        )
-      }
+      <p className="text-white text-opacity-50 border-gray border-b pb-1 mb-5 mt-4">
+        {props.title}
+      </p>
+      {props.item === "type" ? (
+        <ul>
+          {typeList.map((v, i) => (
+            <li key={i}>
+              <ItemCheck name={v.name} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ul>
+          {rarityList.map((v, i) => (
+            <li key={i}>
+              <ItemCheck name={v.name} />
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

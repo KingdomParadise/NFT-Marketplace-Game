@@ -1,6 +1,9 @@
 import "./account.css";
 import { Link } from "react-router-dom";
-import Gun from "../../assets/marketplace/gun.png";
+
+import Pagination from "@mui/material/Pagination";
+import User from "./User";
+import Card from "./Card";
 const linkList = [
   {
     name: "All",
@@ -55,22 +58,16 @@ const cardData = [
   {
     name: "Bluedrift Rifle",
     tagClass: "common-b",
-    tags: [{ class: "common", content: "uncommon" }],
+    tags: [{ class: "common", content: "common" }],
   },
 ];
 
 const Account = () => {
   return (
-    <div className=" text-white text-left">
+    <div className=" text-white text-left bg-black-500 pb-20">
       <div className=" bg-black-700 pt-20 ">
         <div className="container custom-container">
-          <div className=" flex items-center">
-            <div className="w-20 h-20 bg-white rounded-full"></div>
-            <div className="ml-2">
-              <p className="text-2xl">User000</p>
-              <p className=" text-gray text-sm">copy address</p>
-            </div>
-          </div>
+          <User />
           <ul className="flex items-center mt-6">
             {linkList.map((v, i) => (
               <li key={i}>
@@ -86,39 +83,45 @@ const Account = () => {
           </ul>
         </div>
       </div>
-      <div className="bg-black-500">
+      <div className="">
         <div className="container custom-container">
           <h3 className="text-gray border-b-2 border-gray pt-10 pb-2 ">
             Most Valuable Assets
           </h3>
-          <div className="grid grid-cols-3 py-6 gap-x-20 gap-y-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4  gap-y-8 md:grid-cols-3 py-6 md:gap-x-10 lg:gap-x-20 md:gap-y-10">
             {cardData.map((item, id) => (
-              <div
-                key={id}
-                className={`${item.tagClass} pt-6 pb-2 rounded-2xl bg-black-700 `}
-              >
-                <div className="py-16 px-4 gun-bg">
-                  <img src={Gun} alt="" />
-                </div>
-                <div>
-                  <h6 className="text-xl pb-4 border-b border-gray pl-4">
-                    {item.name}
-                  </h6>
-                  <div className=" px-4 py-2 flex justify-between items-center">
-                    <div className="flex">
-                      {item.tags.map((v, i) => (
-                        <div className={`${v.class} mr-2`} key={i}>
-                          {v.content}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="bg-black-500 rounded-full w-5 h-5 flex items-center justify-center cursor-pointer">
-                      +
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Card item={item} key={id} />
             ))}
+          </div>
+          <div className="pb-14">
+            <Pagination count={10} />
+          </div>
+          <div className="border-b border-gray pb-1 text-gray flex justify-between">
+            <p className="text-xl">on-Sale Items</p>
+            <div className="flex items-center">
+              <p>Sort by</p>
+              <div className="ml-2 py-1 px-4 bg-gray-700 rounded-lg cursor-pointer  flex items-center">
+                <p className="mr-2">Newest</p>
+                <i className="fas fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+          <div className="py-40 text-center">
+            <p>No On-Sale Items Yet.</p>
+          </div>
+          <div>
+            <p className="border-b border-gray text-gray pb-1">User Details</p>
+            <div className="flex items-center mt-4">
+              <div className="p-3 px-10 rounded-xl bg-black-700 text-center mr-4">
+                <p className="text-gray">Items Owned</p>
+                <p>200</p>
+              </div>
+              <div className="p-3 px-10 rounded-xl bg-black-700 text-center">
+                <p className="text-gray">Items Owned</p>
+                <p>200</p>
+              </div>
+            </div>
+            <p className="text-gray mt-14">Date Joined: 07/05/22</p>
           </div>
         </div>
       </div>
