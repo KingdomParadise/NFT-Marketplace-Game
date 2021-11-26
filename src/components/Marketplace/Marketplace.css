@@ -33,3 +33,14 @@
 .slider .MuiSlider-colorPrimary {
   color: white;
 }
+
+.product-bg {
+  background-image: url(../../assets/legandary-bg-2.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.product-bg img {
+  max-width: 1000px;
+  width: 90%;
+}
