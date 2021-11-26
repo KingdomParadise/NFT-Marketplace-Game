@@ -68,7 +68,7 @@ const Account = () => {
       <div className=" bg-black-700 pt-20 ">
         <div className="container custom-container">
           <User />
-          <ul className="flex items-center mt-6">
+          <ul className="flex items-center mt-6 overflow-auto">
             {linkList.map((v, i) => (
               <li key={i}>
                 <Link
@@ -111,12 +111,12 @@ const Account = () => {
           </div>
           <div>
             <p className="border-b border-gray text-gray pb-1">User Details</p>
-            <div className="flex items-center mt-4">
-              <div className="p-3 px-10 rounded-xl bg-black-700 text-center mr-4">
+            <div className=" flex-col sm:flex-row flex items-center mt-4">
+              <div className="p-3 px-10 rounded-xl bg-black-700 text-center sm:mr-4">
                 <p className="text-gray">Items Owned</p>
                 <p>200</p>
               </div>
-              <div className="p-3 px-10 rounded-xl bg-black-700 text-center">
+              <div className="p-3 px-10 rounded-xl bg-black-700 text-center mt-8 sm:mt-0">
                 <p className="text-gray">Items Owned</p>
                 <p>200</p>
               </div>

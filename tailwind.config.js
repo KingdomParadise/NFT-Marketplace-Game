@@ -10,10 +10,16 @@ module.exports = {
         "3xl": "1740px",
         "4xl": "1960px",
       },
-
+      textColor: {
+        legendary: "#C78920",
+      },
+      borderColor: {
+        legendary: "#A48C17",
+      },
       colors: {
         transparent: "transparent",
         current: "currentColor",
+        legendary: "#7F5429",
         black: {
           100: "#0000004d",
           500: "#1C1B24",

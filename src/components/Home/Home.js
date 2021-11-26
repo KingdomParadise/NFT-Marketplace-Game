@@ -40,7 +40,7 @@ import textbox from "../../assets/textbox.png";
 import baseModel from "../../assets/base-model.gif";
 import roadBar from "../../assets/road-bar.png";
 import roadTri from "../../assets/road-tri.png";
-
+import { Link } from "react-router-dom";
 import Space1 from "../../assets/spaces/space1.png";
 
 export default function Home(props) {
@@ -74,12 +74,12 @@ export default function Home(props) {
         >
           Buy $VPR on Pancakeswap
         </a>
-        <a
+        <Link
           className="bg-purple-300 hover:bg-purple-500 w-32 p-2 rounded-lg text-white text-shadow custom-box-shadow"
-          href="#"
+          to="/marketplace"
         >
           Marketplace
-        </a>
+        </Link>
       </div>
 
       <Box title="What is Vaporblitz?" className="text-center bg-pink-800 pb-3">

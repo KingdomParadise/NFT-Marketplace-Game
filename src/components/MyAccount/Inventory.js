@@ -92,7 +92,7 @@ const Inventory = () => {
       <div className=" bg-black-700 pt-20 ">
         <div className="container custom-container">
           <User text="My Inventory" />
-          <ul className="flex items-center mt-6">
+          <ul className="flex items-center mt-6  overflow-auto">
             {linkList.map((v, i) => (
               <li key={i}>
                 <Link
